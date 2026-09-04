@@ -66,6 +66,10 @@
 - 38 автотестов (`sources/catalog/tests.py`, `sources/accounts/tests.py`).
 - CI на GitHub Actions: валидация данных, проверки Django, синхронность
   миграций, тесты, пробная загрузка контента.
+- Статическая витрина для GitHub Pages: `tools/build_static.py` собирает
+  публичную часть портала в HTML на трёх языках, фильтры каталога в этом
+  режиме работают в браузере; workflow `pages.yml` публикует её при каждом
+  обновлении `main`.
 - Выбор СУБД переменной окружения: SQLite по умолчанию, PostgreSQL по
   `DB_ENGINE=postgres`.
 - Bootstrap 5.3.3 и Leaflet 1.9.4 в `sources/static/vendor/`: сайт работает

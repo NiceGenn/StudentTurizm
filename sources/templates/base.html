@@ -38,6 +38,13 @@
         <li class="nav-item"><a class="nav-link" href="{% url 'catalog:about' %}">{% translate "О портале" %}</a></li>
       </ul>
 
+      {% if static_demo %}
+      <div class="d-flex align-items-center gap-2 me-lg-3 my-2 my-lg-0 lang-links">
+        <a href="@@LANG_RU@@" class="{% if LANGUAGE_CODE == 'ru' %}active{% endif %}">Русский</a>
+        <a href="@@LANG_EN@@" class="{% if LANGUAGE_CODE == 'en' %}active{% endif %}">English</a>
+        <a href="@@LANG_ZH@@" class="{% if LANGUAGE_CODE == 'zh-hans' %}active{% endif %}">中文</a>
+      </div>
+      {% else %}
       <form action="{% url 'set_language' %}" method="post" class="d-flex me-lg-3 my-2 my-lg-0">
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ request.get_full_path }}">
@@ -51,9 +58,16 @@
         </select>
         <noscript><button type="submit" class="btn btn-sm btn-light ms-1">OK</button></noscript>
       </form>
+      {% endif %}
 
       <ul class="navbar-nav">
-        {% if user.is_authenticated %}
+        {% if static_demo %}
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/NiceGenn/StudentTurizm" target="_blank" rel="noopener">
+              {% translate "Исходный код" %} ↗
+            </a>
+          </li>
+        {% elif user.is_authenticated %}
           <li class="nav-item"><a class="nav-link" href="{% url 'accounts:favorites' %}">♥ {% translate "Избранное" %}</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" role="button" aria-expanded="false">
@@ -81,6 +95,15 @@
     </div>
   </div>
 </nav>
+
+{% if static_demo %}
+  <div class="demo-bar">
+    <div class="container small">
+      {% blocktranslate %}Витрина проекта: доступен только просмотр. Регистрация, избранное, отзывы и панель управления работают в полной версии — она запускается локально файлом START.bat.{% endblocktranslate %}
+      <a href="https://github.com/NiceGenn/StudentTurizm" target="_blank" rel="noopener">{% translate "Как запустить" %} →</a>
+    </div>
+  </div>
+{% endif %}
 
 {% if messages %}
   <div class="container mt-3">

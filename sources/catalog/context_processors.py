@@ -9,4 +9,6 @@ def site_menu(request):
         # Bootstrap и Leaflet берутся из static/vendor, если их туда положили
         # скриптом tools/vendor_assets.sh, иначе — из CDN.
         "vendor_local": settings.VENDOR_LOCAL,
+        # Статическая витрина на GitHub Pages: только просмотр.
+        "static_demo": settings.STATIC_DEMO,
     }

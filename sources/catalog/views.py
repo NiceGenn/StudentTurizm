@@ -116,7 +116,10 @@ def attraction_list(request):
     outside = queryset.filter(in_district=False)
     queryset = queryset.filter(in_district=True)
 
-    paginator = Paginator(queryset, PORTAL["items_per_page"])
+    # В статической витрине страниц нет: адрес с ?page= там не обрабатывается,
+    # поэтому выводим весь каталог одной страницей.
+    per_page = 1000 if settings.STATIC_DEMO else PORTAL["items_per_page"]
+    paginator = Paginator(queryset, per_page)
     page = paginator.get_page(request.GET.get("page"))
 
     querystring = request.GET.copy()

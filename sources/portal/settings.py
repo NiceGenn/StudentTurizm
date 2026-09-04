@@ -161,10 +161,23 @@ TRANSLATION_FIELD_SUFFIXES = {
 # --- Статика и медиа ------------------------------------------------------
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = Path(env("DJANGO_STATIC_ROOT")) if env("DJANGO_STATIC_ROOT") else BASE_DIR / "staticfiles"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+# --- Статическая витрина для GitHub Pages ---------------------------------
+# Включается только сборщиком tools/build_static.py. В этом режиме страницы
+# отдаются без входа, избранного, отзывов и панели управления, фильтры
+# каталога работают в браузере, а переключатель языка становится ссылками.
+STATIC_DEMO = env_bool("STATIC_DEMO", False)
+
+# GitHub Pages отдаёт сайт из подпапки вида /StudentTurizm, поэтому все
+# ссылки должны нести этот префикс.
+FORCE_SCRIPT_NAME = env("DJANGO_SCRIPT_NAME") or None
+if FORCE_SCRIPT_NAME:
+    STATIC_URL = FORCE_SCRIPT_NAME + STATIC_URL
+    MEDIA_URL = FORCE_SCRIPT_NAME + MEDIA_URL
 
 # Bootstrap и Leaflet лежат в static/vendor и подключаются оттуда: сайт
 # работает без интернета. Если папку удалить, шаблоны вернутся к CDN.

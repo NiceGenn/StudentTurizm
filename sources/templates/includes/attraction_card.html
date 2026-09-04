@@ -2,7 +2,11 @@
 Карточка объекта. Ожидает переменную `item` (Attraction) и, по желанию,
 `favorite_slugs` — множество кодов объектов в избранном пользователя.
 {% endcomment %}
-<article class="card-object">
+<article class="card-object"
+         data-category="{{ item.category.slug }}"
+         data-village="{{ item.village.slug|default:'' }}"
+         data-season="{{ item.season }}"
+         data-text="{{ item.title_i18n|lower }} {{ item.short_description_i18n|lower }} {{ item.tags|lower }}">
   <a href="{{ item.get_absolute_url }}" class="d-block">
     {% with cover=item.cover %}
       {% if cover %}
@@ -15,7 +19,7 @@
   <div class="card-body">
     <div class="d-flex justify-content-between align-items-start gap-2">
       <h3 class="title h6 mb-0"><a href="{{ item.get_absolute_url }}">{{ item.title_i18n }}</a></h3>
-      {% if user.is_authenticated %}
+      {% if user.is_authenticated and not static_demo %}
         <form method="post" action="{% url 'catalog:toggle_favorite' item.slug %}">
           {% csrf_token %}
           <input type="hidden" name="next" value="{{ request.get_full_path }}">

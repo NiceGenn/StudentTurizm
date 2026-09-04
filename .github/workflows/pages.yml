@@ -1,0 +1,64 @@
+name: Витрина на GitHub Pages
+
+# Собирает статическую копию публичной части портала и публикует её.
+# Полная версия (вход, избранное, отзывы, панель управления) требует
+# работающего Python и на GitHub Pages не запускается — см. docs/10-deploy.md.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Сборка витрины
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Установка Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Установка зависимостей
+        run: |
+          python -m pip install --upgrade pip
+          pip install "Django>=5.1,<5.2" Pillow whitenoise
+
+      - name: База и демонстрационное наполнение
+        run: |
+          python sources/manage.py migrate --noinput
+          python sources/manage.py seed_demo
+
+      - name: Сборка статических страниц
+        env:
+          PAGES_PREFIX: /${{ github.event.repository.name }}
+        run: python tools/build_static.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    name: Публикация
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

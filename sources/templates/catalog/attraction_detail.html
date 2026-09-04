@@ -31,7 +31,8 @@
         </div>
       </div>
 
-      {% if user.is_authenticated %}
+      {% if static_demo %}
+      {% elif user.is_authenticated %}
         <form method="post" action="{% url 'catalog:toggle_favorite' attraction.slug %}">
           {% csrf_token %}
           <input type="hidden" name="next" value="{{ request.get_full_path }}">
@@ -110,7 +111,11 @@
       {% endfor %}
 
       <div class="panel mt-4">
-        {% if not user.is_authenticated %}
+        {% if static_demo %}
+          <p class="mb-0 small text-muted">
+            {% blocktranslate %}Оставить отзыв можно в полной версии портала — здесь доступен только просмотр.{% endblocktranslate %}
+          </p>
+        {% elif not user.is_authenticated %}
           <p class="mb-0 small">
             <a href="{% url 'accounts:login' %}?next={{ request.get_full_path|urlencode }}">{% translate "Войдите" %}</a>
             {% translate "или" %}

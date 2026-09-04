@@ -11,6 +11,7 @@ db.sqlite3
 db.sqlite3-journal
 sources/media/
 sources/staticfiles/
+build/
 *.log
 
 # Локальные настройки окружения
