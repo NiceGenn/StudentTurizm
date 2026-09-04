@@ -2,6 +2,17 @@
 
 ## Установка
 
+Самый простой способ — запустить **`START.bat`** (Windows) или `./start.sh`
+(macOS, Linux) из корня проекта. Скрипт создаст виртуальное окружение,
+поставит зависимости, применит миграции, загрузит демонстрационное
+наполнение, запустит сервер и откроет сайт в браузере. Повторные запуски
+пропускают уже выполненные шаги.
+
+Требуется установленный Python 3.11+; на Windows при установке нужна
+галочка «Add python.exe to PATH».
+
+Вручную:
+
 ```bash
 git clone https://github.com/NiceGenn/StudentTurizm.git
 cd StudentTurizm
@@ -207,3 +218,6 @@ Bootstrap и Leaflet лежат в репозитории (`sources/static/vendo
 | Интерфейс не переключается на английский | нет файлов `.mo`: `python sources/manage.py compilemessages` |
 | Карта серая | нет доступа к серверам тайлов OpenStreetMap |
 | `Не найден файл справочника` | команду запустили не из корня репозитория или удалён каталог `data/` |
+| `START.bat` пишет, что нет Python | установите Python с python.org и обязательно отметьте «Add python.exe to PATH» |
+| `START.bat` не смог поставить Django | нет доступа в интернет; соберите папку `wheels` на другой машине (`pip download Django Pillow -d wheels`) и положите рядом с `START.bat` |
+| Нужно вернуть стенд в исходное состояние | удалите `sources\db.sqlite3`, `sources\media` и файл `.venv\.seeded`, затем запустите `START.bat` |

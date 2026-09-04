@@ -7,6 +7,8 @@
 *.js    text
 *.json  text
 *.md    text
+*.bat   text eol=crlf
+*.sh    text eol=lf
 *.po    text
 *.mo    binary
 *.png   binary
