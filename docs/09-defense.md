@@ -6,9 +6,8 @@
 ## Подготовка (за 15 минут до защиты)
 
 ```bash
-./tools/vendor_assets.sh                    # если есть риск проблем с сетью
 python sources/manage.py seed_demo --flush  # чистое состояние стенда
-./tools/test.sh                             # убедиться, что всё зелёное (34 теста)
+./tools/test.sh                             # убедиться, что всё зелёное (38 тестов)
 ./tools/run.sh
 ```
 
@@ -142,7 +141,7 @@ Leaflet с тайлами OpenStreetMap не требует ключа, реги
 | Use-case диаграмма | [02-use-case.md](02-use-case.md) |
 | ER-диаграмма | [03-er-model.md](03-er-model.md) |
 | Макеты интерфейса | [04-mockups.md](04-mockups.md) |
-| Тест-кейсы (34 автотеста) | [05-test-cases.md](05-test-cases.md) |
+| Тест-кейсы (38 автотестов) | [05-test-cases.md](05-test-cases.md) |
 | Руководство пользователя | [06-user-guide.md](06-user-guide.md) |
 | Руководство администратора | [07-admin-guide.md](07-admin-guide.md) |
 | Фактическая справка | [08-facts.md](08-facts.md) |

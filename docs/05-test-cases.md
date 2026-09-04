@@ -2,7 +2,7 @@
 
 Ручные проверки и соответствующие им автотесты. Автотесты запускаются
 командой `./tools/test.sh`, файлы — `sources/catalog/tests.py` и
-`sources/accounts/tests.py` (всего 34 теста).
+`sources/accounts/tests.py` (всего 38 тестов).
 
 Предусловие для ручных проверок: выполнен `./tools/setup.sh`, сервер запущен
 командой `./tools/run.sh`, база наполнена демо-контентом.
@@ -122,4 +122,4 @@
 | ТК-11.2 | Модели и миграции синхронны | `python sources/manage.py makemigrations --check --dry-run` | «No changes detected» |
 | ТК-11.3 | Повторная загрузка не дублирует | `python sources/manage.py seed_demo` дважды | Количество объектов не изменилось |
 | ТК-11.4 | Полная пересборка | `python sources/manage.py seed_demo --flush` | База очищена и наполнена заново без ошибок |
-| ТК-11.5 | Все проверки | `./tools/test.sh` | 34 теста пройдено, ошибок нет |
+| ТК-11.5 | Все проверки | `./tools/test.sh` | 38 тестов пройдено, ошибок нет |

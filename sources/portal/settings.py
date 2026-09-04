@@ -151,9 +151,9 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# Bootstrap и Leaflet подключаются из static/vendor, если файлы туда скачаны
-# (tools/vendor_assets.sh), иначе — из CDN. Локальная копия нужна, чтобы сайт
-# работал на защите без интернета.
+# Bootstrap и Leaflet лежат в static/vendor и подключаются оттуда: сайт
+# работает без интернета. Если папку удалить, шаблоны вернутся к CDN.
+# Обновить версии: tools/vendor_assets.sh
 VENDOR_LOCAL = (BASE_DIR / "static" / "vendor" / "leaflet.js").exists()
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

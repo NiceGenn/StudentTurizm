@@ -35,12 +35,12 @@
 {% endblock %}
 
 {% block extra_js %}
+{{ map_config|json_script:"map-config" }}
 <script src="{% static 'js/map.js' %}"></script>
 <script>
-  portalMap.all(document.getElementById('map'), {
-    url: "{% url 'catalog:attractions_json' %}",
-    center: [{{ map_center.0 }}, {{ map_center.1 }}],
-    zoom: {{ map_zoom }}
-  });
+  portalMap.all(document.getElementById('map'), Object.assign(
+    JSON.parse(document.getElementById('map-config').textContent),
+    { url: "{% url 'catalog:attractions_json' %}" }
+  ));
 </script>
 {% endblock %}

@@ -72,12 +72,12 @@
 
 {% block extra_js %}
 {{ points_json|json_script:"route-points" }}
+{{ map_config|json_script:"map-config" }}
 <script src="{% static 'js/map.js' %}"></script>
 <script>
-  portalMap.route(document.getElementById('map'), {
-    center: [{{ portal.map_center.0 }}, {{ portal.map_center.1 }}],
-    zoom: {{ portal.map_zoom }},
-    points: JSON.parse(document.getElementById('route-points').textContent)
-  });
+  portalMap.route(document.getElementById('map'), Object.assign(
+    JSON.parse(document.getElementById('map-config').textContent),
+    { points: JSON.parse(document.getElementById('route-points').textContent) }
+  ));
 </script>
 {% endblock %}

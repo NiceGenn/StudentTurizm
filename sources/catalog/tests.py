@@ -5,6 +5,7 @@
 """
 
 import datetime
+import json
 
 from django.contrib.auth.models import User
 from django.test import TestCase
@@ -17,8 +18,8 @@ from .models import Attraction, Category, Event, Favorite, Review, Route, RouteP
 class BaseContentTestCase(TestCase):
     @classmethod
     def setUpTestData(cls):
-        cls.category_rest = Category.objects.create(slug="rest", name="Базы отдыха", icon="🏡", order=10)
-        cls.category_border = Category.objects.create(slug="border", name="Приграничье", icon="🌉", order=20)
+        cls.category_rest = Category.objects.create(slug="rest", name="Базы отдыха", icon="🏡", order=30)
+        cls.category_border = Category.objects.create(slug="border", name="Приграничье", icon="🌉", order=10)
         cls.village = Village.objects.create(slug="natalyino", name="Натальино", lat=50.44, lng=127.68)
         cls.other_village = Village.objects.create(slug="chigiri", name="Чигири", lat=50.31, lng=127.53)
 
@@ -79,6 +80,12 @@ class BaseContentTestCase(TestCase):
 
 
 class CatalogViewTests(BaseContentTestCase):
+    def test_home_categories_follow_configured_order(self):
+        """annotate() сбрасывает сортировку из Meta — порядок задаётся явно."""
+        response = self.client.get(reverse("catalog:home"))
+        orders = [category.order for category in response.context["categories"]]
+        self.assertEqual(orders, sorted(orders))
+
     def test_home_page_lists_published_attractions(self):
         response = self.client.get(reverse("catalog:home"))
         self.assertEqual(response.status_code, 200)
@@ -190,6 +197,44 @@ class RouteTests(BaseContentTestCase):
     def test_attraction_page_shows_related_routes(self):
         response = self.client.get(self.bridge.get_absolute_url())
         self.assertIn(self.route, list(response.context["routes"]))
+
+
+class MapConfigTests(BaseContentTestCase):
+    """Координаты в шаблоне не должны локализоваться: Leaflet ждёт точку."""
+
+    @classmethod
+    def setUpTestData(cls):
+        super().setUpTestData()
+        cls.route = Route.objects.create(slug="border-weekend", title="Приграничный уик-энд")
+        RoutePoint.objects.create(route=cls.route, attraction=cls.bridge, order=1)
+        RoutePoint.objects.create(route=cls.route, attraction=cls.base, order=2)
+
+    def _config(self, url):
+        response = self.client.get(url)
+        html = response.content.decode()
+        raw = html.split('id="map-config" type="application/json">')[1].split("</script>")[0]
+        return json.loads(raw)
+
+    def test_map_page_config_is_valid_json(self):
+        config = self._config(reverse("catalog:map"))
+        self.assertEqual(len(config["center"]), 2)
+        self.assertIsInstance(config["zoom"], int)
+
+    def test_route_page_config_and_points_are_valid_json(self):
+        config = self._config(self.route.get_absolute_url())
+        self.assertEqual(len(config["center"]), 2)
+        html = self.client.get(self.route.get_absolute_url()).content.decode()
+        raw = html.split('id="route-points" type="application/json">')[1].split("</script>")[0]
+        points = json.loads(raw)
+        self.assertEqual(len(points), 2)
+        self.assertIsInstance(points[0]["lat"], float)
+
+    def test_detail_page_coordinates_use_dot(self):
+        response = self.client.get(self.base.get_absolute_url())
+        html = response.content.decode()
+        lat = html.split('data-lat="')[1].split('"')[0]
+        self.assertNotIn(",", lat)
+        self.assertAlmostEqual(float(lat), self.base.lat, places=4)
 
 
 class FavoriteTests(BaseContentTestCase):

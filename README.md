@@ -75,8 +75,8 @@ tools/      скрипты установки, запуска, проверки,
 |---|---|
 | `./tools/setup.sh` | первичная настройка проекта |
 | `./tools/run.sh` | сервер разработки |
-| `./tools/test.sh` | валидация справочника, системные проверки, 34 теста |
-| `./tools/vendor_assets.sh` | скачать Bootstrap и Leaflet для работы без интернета |
+| `./tools/test.sh` | валидация справочника, системные проверки, 38 тестов |
+| `./tools/vendor_assets.sh` | обновить локальные копии Bootstrap и Leaflet |
 | `python tools/check_data.py` | проверить `data/*.json` до загрузки в базу |
 | `python sources/manage.py seed_demo` | загрузить или обновить демо-контент |
 | `python sources/manage.py seed_demo --flush` | пересобрать контент с нуля |
@@ -114,3 +114,7 @@ python sources/manage.py migrate && python sources/manage.py seed_demo
   [Bootstrap](https://getbootstrap.com/) (MIT), [Leaflet](https://leafletjs.com/) (BSD).
 - Фотографий объектов в репозитории нет: команда наполнения генерирует
   абстрактные заглушки, настоящие снимки загружаются через панель управления.
+
+Bootstrap и Leaflet лежат в `sources/static/vendor/`, поэтому сайт работает
+без интернета. Тайлы карты приходят с серверов OpenStreetMap: без сети карта
+останется серой, остальной портал — рабочим.

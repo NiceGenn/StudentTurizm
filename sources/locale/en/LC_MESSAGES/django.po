@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tourism portal of the Blagoveshchensk district\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-04 22:55+0900\n"
+"POT-Creation-Date: 2026-09-04 23:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,6 +90,50 @@ msgstr "Sort by"
 #: templates/catalog/route_list.html:13
 msgid "Все"
 msgstr "All"
+
+#: catalog/models.py:45
+msgid "Круглый год"
+msgstr "All year round"
+
+#: catalog/models.py:46
+msgid "Лето"
+msgstr "Summer"
+
+#: catalog/models.py:47
+msgid "Зима"
+msgstr "Winter"
+
+#: catalog/models.py:48
+msgid "Весна и осень"
+msgstr "Spring and autumn"
+
+#: catalog/models.py:52 templates/pages/about.html:35
+msgid "Действующий"
+msgstr "Operating"
+
+#: catalog/models.py:53 templates/pages/about.html:36
+msgid "Строится"
+msgstr "Under construction"
+
+#: catalog/models.py:54
+msgid "Планируется"
+msgstr "Planned"
+
+#: catalog/models.py:55 templates/pages/about.html:37
+msgid "Не действует"
+msgstr "Not operating"
+
+#: catalog/models.py:346
+msgid "Лёгкий"
+msgstr "Easy"
+
+#: catalog/models.py:346
+msgid "Средний"
+msgstr "Moderate"
+
+#: catalog/models.py:346
+msgid "Сложный"
+msgstr "Hard"
 
 #: catalog/views.py:31
 msgid "По названию"
@@ -792,24 +836,12 @@ msgstr ""
 "place has a status, shown right on its card."
 
 #: templates/pages/about.html:35
-msgid "Действующий"
-msgstr "Operating"
-
-#: templates/pages/about.html:35
 msgid "объект принимает гостей"
 msgstr "the place welcomes visitors"
 
 #: templates/pages/about.html:36
-msgid "Строится"
-msgstr "Under construction"
-
-#: templates/pages/about.html:36
 msgid "объект ещё не открыт, сроки могут сдвигаться"
 msgstr "not open yet, the schedule may shift"
-
-#: templates/pages/about.html:37
-msgid "Не действует"
-msgstr "Not operating"
 
 #: templates/pages/about.html:37
 msgid "поездку планировать нельзя"

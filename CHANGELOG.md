@@ -59,13 +59,13 @@
 **Инфраструктура**
 - Скрипты `tools/setup.sh`, `run.sh`, `test.sh`, `vendor_assets.sh` и
   валидатор справочника `tools/check_data.py`.
-- 34 автотеста (`sources/catalog/tests.py`, `sources/accounts/tests.py`).
+- 38 автотестов (`sources/catalog/tests.py`, `sources/accounts/tests.py`).
 - CI на GitHub Actions: валидация данных, проверки Django, синхронность
   миграций, тесты, пробная загрузка контента.
 - Выбор СУБД переменной окружения: SQLite по умолчанию, PostgreSQL по
   `DB_ENGINE=postgres`.
-- Автоматическое переключение на локальные копии Bootstrap и Leaflet, если
-  они скачаны в `sources/static/vendor/`.
+- Bootstrap 5.3.3 и Leaflet 1.9.4 в `sources/static/vendor/`: сайт работает
+  без интернета; при удалении папки шаблоны возвращаются к CDN.
 
 **Документация**
 - ТЗ, use-case, ER-модель, макеты, тест-кейсы, руководства пользователя и

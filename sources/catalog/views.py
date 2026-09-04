@@ -56,9 +56,11 @@ def home(request):
 
     context = {
         "featured": attractions.in_district().filter(status=ObjectStatus.ACTIVE).order_by("-rating_avg", "title")[:6],
-        "categories": Category.objects.annotate(
-            count=Count("attractions", filter=Q(attractions__is_published=True))
-        ).filter(count__gt=0),
+        # order_by нужен явно: annotate() с агрегатом по связанной модели
+        # сбрасывает сортировку из Meta, и категории уходили по алфавиту кода.
+        "categories": Category.objects.annotate(count=Count("attractions", filter=Q(attractions__is_published=True)))
+        .filter(count__gt=0)
+        .order_by("order", "name"),
         "events": Event.objects.filter(is_published=True)
         .filter(Q(date_end__gte=today) | Q(date_start__gte=today))
         .select_related("village", "attraction")[:4],
@@ -185,8 +187,9 @@ def attraction_detail(request, slug):
 def map_page(request):
     context = {
         "categories": Category.objects.all(),
-        "map_center": PORTAL["map_center"],
-        "map_zoom": PORTAL["map_zoom"],
+        # Через json_script: при русской локали числа в шаблоне выводятся
+        # с запятой в качестве разделителя и ломают Leaflet.
+        "map_config": {"center": PORTAL["map_center"], "zoom": PORTAL["map_zoom"]},
     }
     return render(request, "catalog/map.html", context)
 
@@ -295,6 +298,7 @@ def route_detail(request, slug):
     context = {
         "route": route,
         "points": points,
+        "map_config": {"center": PORTAL["map_center"], "zoom": PORTAL["map_zoom"]},
         "points_json": [
             {
                 "title": point.attraction.title_i18n,

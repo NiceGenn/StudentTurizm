@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tourism portal of the Blagoveshchensk district\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-04 22:55+0900\n"
+"POT-Creation-Date: 2026-09-04 23:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,6 +90,50 @@ msgstr "排序"
 #: templates/catalog/route_list.html:13
 msgid "Все"
 msgstr "全部"
+
+#: catalog/models.py:45
+msgid "Круглый год"
+msgstr "全年"
+
+#: catalog/models.py:46
+msgid "Лето"
+msgstr "夏季"
+
+#: catalog/models.py:47
+msgid "Зима"
+msgstr "冬季"
+
+#: catalog/models.py:48
+msgid "Весна и осень"
+msgstr "春秋两季"
+
+#: catalog/models.py:52 templates/pages/about.html:35
+msgid "Действующий"
+msgstr "运营中"
+
+#: catalog/models.py:53 templates/pages/about.html:36
+msgid "Строится"
+msgstr "在建"
+
+#: catalog/models.py:54
+msgid "Планируется"
+msgstr "计划中"
+
+#: catalog/models.py:55 templates/pages/about.html:37
+msgid "Не действует"
+msgstr "未运营"
+
+#: catalog/models.py:346
+msgid "Лёгкий"
+msgstr "轻松"
+
+#: catalog/models.py:346
+msgid "Средний"
+msgstr "中等"
+
+#: catalog/models.py:346
+msgid "Сложный"
+msgstr "较难"
 
 #: catalog/views.py:31
 msgid "По названию"
@@ -764,24 +808,12 @@ msgid ""
 msgstr "网上写到的并非都在实际运营，因此每个地点都有状态标注，直接显示在条目上。"
 
 #: templates/pages/about.html:35
-msgid "Действующий"
-msgstr "运营中"
-
-#: templates/pages/about.html:35
 msgid "объект принимает гостей"
 msgstr "该地点接待游客"
 
 #: templates/pages/about.html:36
-msgid "Строится"
-msgstr "在建"
-
-#: templates/pages/about.html:36
 msgid "объект ещё не открыт, сроки могут сдвигаться"
 msgstr "尚未开放，时间可能变动"
-
-#: templates/pages/about.html:37
-msgid "Не действует"
-msgstr "未运营"
 
 #: templates/pages/about.html:37
 msgid "поездку планировать нельзя"

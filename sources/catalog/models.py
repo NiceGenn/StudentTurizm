@@ -14,6 +14,7 @@ from django.db.models import Avg, Count
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import get_language
+from django.utils.translation import gettext_lazy as _
 
 
 class TranslatedFieldsMixin:
@@ -39,17 +40,19 @@ class TranslatedFieldsMixin:
 
 
 class Season(models.TextChoices):
-    ALL_YEAR = "all_year", "Круглый год"
-    SUMMER = "summer", "Лето"
-    WINTER = "winter", "Зима"
-    SPRING_AUTUMN = "spring_autumn", "Весна и осень"
+    """Сезонность объекта. Подписи переводятся: они видны гостю на карточке."""
+
+    ALL_YEAR = "all_year", _("Круглый год")
+    SUMMER = "summer", _("Лето")
+    WINTER = "winter", _("Зима")
+    SPRING_AUTUMN = "spring_autumn", _("Весна и осень")
 
 
 class ObjectStatus(models.TextChoices):
-    ACTIVE = "active", "Действующий"
-    CONSTRUCTION = "construction", "Строится"
-    PLANNED = "planned", "Планируется"
-    CLOSED = "closed", "Не действует"
+    ACTIVE = "active", _("Действующий")
+    CONSTRUCTION = "construction", _("Строится")
+    PLANNED = "planned", _("Планируется")
+    CLOSED = "closed", _("Не действует")
 
 
 class Village(TranslatedFieldsMixin, models.Model):
@@ -340,7 +343,7 @@ class Route(TranslatedFieldsMixin, models.Model):
     difficulty = models.CharField(
         "Сложность",
         max_length=20,
-        choices=[("easy", "Лёгкий"), ("medium", "Средний"), ("hard", "Сложный")],
+        choices=[("easy", _("Лёгкий")), ("medium", _("Средний")), ("hard", _("Сложный"))],
         default="easy",
     )
     cover_image = models.ImageField("Обложка", upload_to="routes/", blank=True)
