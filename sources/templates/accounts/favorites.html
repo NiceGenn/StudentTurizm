@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Избранное" %} — {% translate "Туризм округа" %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <h1 class="section-title">{% translate "Избранное" %}</h1>
+  <p class="section-sub">{% translate "Объекты, которые вы сохранили для поездки." %}</p>
+
+  <div class="row g-3">
+    {% for favorite in items %}
+      <div class="col-md-6 col-lg-4">
+        {% include "includes/attraction_card.html" with item=favorite.attraction favorite_slugs=favorite_slugs %}
+      </div>
+    {% empty %}
+      <div class="col-12">
+        <div class="panel text-center py-5">
+          <p class="text-muted">{% translate "Список пуст. Добавляйте объекты кнопкой ♥ в каталоге." %}</p>
+          <a href="{% url 'catalog:attraction_list' %}" class="btn btn-brand">{% translate "Открыть каталог" %}</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% load i18n %}{% comment %}
+Метка статуса объекта. Показывается всегда, кроме действующих объектов
+в границах округа — там она была бы шумом.
+{% endcomment %}
+{% if item.status == 'closed' %}
+  <span class="chip chip-danger" title="{% translate 'Объект не работает' %}">⛔ {{ item.get_status_display }}</span>
+{% elif item.status == 'construction' %}
+  <span class="chip chip-warn">🏗 {{ item.get_status_display }}</span>
+{% elif item.status == 'planned' %}
+  <span class="chip chip-warn">📅 {{ item.get_status_display }}</span>
+{% endif %}
+{% if not item.in_district %}
+  <span class="chip chip-info" title="{% translate 'Объект расположен за границами округа' %}">📍 {% translate "Рядом с округом" %}</span>
+{% endif %}
+{% if item.is_fictional %}
+  <span class="chip chip-tag" title="{% translate 'Название и услуги условные, карточка учебная' %}">✎ {% translate "Учебные данные" %}</span>
+{% endif %}

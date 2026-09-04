@@ -1,0 +1,133 @@
+{% load i18n static %}<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% translate "Туристический портал Благовещенского округа" %}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{% translate "Туристические объекты, события и маршруты Благовещенского муниципального округа Амурской области." %}{% endblock %}">
+
+  {% if vendor_local %}
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/leaflet.css' %}">
+  {% else %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+  {% endif %}
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-brand">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="{% url 'catalog:home' %}">
+      <span class="brand-mark">⛰</span>
+      {% translate "Туризм округа" %}
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="{% translate 'Меню' %}">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="{% url 'catalog:attraction_list' %}">{% translate "Каталог" %}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'catalog:map' %}">{% translate "Карта" %}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'catalog:route_list' %}">{% translate "Маршруты" %}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'catalog:event_list' %}">{% translate "События" %}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'catalog:about' %}">{% translate "О портале" %}</a></li>
+      </ul>
+
+      <form action="{% url 'set_language' %}" method="post" class="d-flex me-lg-3 my-2 my-lg-0">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+        <select name="language" class="form-select form-select-sm lang-select" onchange="this.form.submit()"
+                aria-label="{% translate 'Язык интерфейса' %}">
+          {% get_current_language as CURRENT_LANGUAGE %}
+          {% get_available_languages as LANGUAGES %}
+          {% for code, name in LANGUAGES %}
+            <option value="{{ code }}" {% if code == CURRENT_LANGUAGE %}selected{% endif %}>{{ name }}</option>
+          {% endfor %}
+        </select>
+        <noscript><button type="submit" class="btn btn-sm btn-light ms-1">OK</button></noscript>
+      </form>
+
+      <ul class="navbar-nav">
+        {% if user.is_authenticated %}
+          <li class="nav-item"><a class="nav-link" href="{% url 'accounts:favorites' %}">♥ {% translate "Избранное" %}</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+              {{ user.get_full_name|default:user.username }}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="{% url 'accounts:profile' %}">{% translate "Профиль" %}</a></li>
+              {% if is_content_manager %}
+                <li><a class="dropdown-item" href="{% url 'admin:index' %}">{% translate "Панель управления" %}</a></li>
+              {% endif %}
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <form action="{% url 'accounts:logout' %}" method="post" class="px-3 py-1">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-sm btn-outline-secondary w-100">{% translate "Выйти" %}</button>
+                </form>
+              </li>
+            </ul>
+          </li>
+        {% else %}
+          <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">{% translate "Вход" %}</a></li>
+          <li class="nav-item"><a class="nav-link btn btn-sm btn-light text-dark px-3 ms-lg-2" href="{% url 'accounts:register' %}">{% translate "Регистрация" %}</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{% if messages %}
+  <div class="container mt-3">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags|default:'info' }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{% translate 'Закрыть' %}"></button>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<main class="flex-grow-1">
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="footer mt-5 py-4">
+  <div class="container">
+    <div class="row gy-3">
+      <div class="col-lg-5">
+        <div class="fw-semibold mb-1">{% translate "Туристический портал" %}</div>
+        <div class="small text-muted">{{ portal.district_name }}, {{ portal.region_name }}</div>
+      </div>
+      <div class="col-lg-3">
+        <ul class="list-unstyled small mb-0">
+          <li><a href="{% url 'catalog:about' %}">{% translate "О портале" %}</a></li>
+          <li><a href="{% url 'catalog:how_to_get' %}">{% translate "Как добраться" %}</a></li>
+          <li><a href="{% url 'catalog:contacts' %}">{% translate "Контакты" %}</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <p class="small text-muted mb-0">
+          {% blocktranslate %}Учебный проект. Данные пользователей вымышленные, бронирования и платежи не производятся.{% endblocktranslate %}
+          {% translate "Картографическая основа" %}: &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener" target="_blank">OpenStreetMap</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% if vendor_local %}
+  <script src="{% static 'vendor/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/leaflet.js' %}"></script>
+{% else %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+{% endif %}
+{% block extra_js %}{% endblock %}
+</body>
+</html>

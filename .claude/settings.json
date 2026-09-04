@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 sources/manage.py check)",
+      "Bash(python3 sources/manage.py test:*)",
+      "Bash(python3 sources/manage.py makemigrations:*)",
+      "Bash(python3 sources/manage.py migrate:*)",
+      "Bash(python3 sources/manage.py seed_demo:*)",
+      "Bash(python3 tools/check_data.py)",
+      "Bash(bash tools/test.sh:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)"
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "user": "ivanova",
+    "attraction": "baza-otdyha-raduga",
+    "rating": 5,
+    "text": "Ездили семьёй на выходные в феврале. Дом тёплый, баня протоплена к приезду, с берега красивый вид на Зею. Детям больше всего зашёл верёвочный парк.",
+    "is_approved": true,
+    "days_ago": 12
+  },
+  {
+    "user": "petrov",
+    "attraction": "baza-otdyha-raduga",
+    "rating": 4,
+    "text": "Хорошее место для рыбалки, но дорогу после дождя размывает — лучше ехать на машине с нормальным клиренсом.",
+    "is_approved": true,
+    "days_ago": 30
+  },
+  {
+    "user": "sidorova",
+    "attraction": "smotrovaya-na-amur",
+    "rating": 5,
+    "text": "Пришли на закате — вид на Амур и огни Хэйхэ отличный. Учтите, что это пограничная зона, ведите себя спокойно и не лезьте к воде.",
+    "is_approved": true,
+    "days_ago": 8
+  },
+  {
+    "user": "petrov",
+    "attraction": "pamyatnik-kazakam",
+    "rating": 4,
+    "text": "Небольшой памятник, но с него правильно начинать знакомство с историей города. Пятнадцати минут хватает.",
+    "is_approved": true,
+    "days_ago": 21
+  },
+  {
+    "user": "ivanova",
+    "attraction": "paseka-amurskiy-med",
+    "rating": 5,
+    "text": "Возили класс на экскурсию. Рассказывают понятно, дегустация детям понравилась. Осы никого не покусали :)",
+    "is_approved": true,
+    "days_ago": 40
+  },
+  {
+    "user": "guest_zh",
+    "attraction": "most-blagoveshchensk-heihe",
+    "rating": 5,
+    "text": "Смотровая точка на мост — обязательно. Приехал из Хэйхэ, интересно увидеть переход с российской стороны.",
+    "is_approved": true,
+    "days_ago": 5
+  },
+  {
+    "user": "sidorova",
+    "attraction": "birdwatching-poima-zei",
+    "rating": 4,
+    "text": "Журавлей видели, но далеко — без бинокля делать нечего. Вставать пришлось в четыре утра, оно того стоило.",
+    "is_approved": false,
+    "days_ago": 2
+  },
+  {
+    "user": "petrov",
+    "attraction": "nedostroennaya-gornolyzhnaya-baza",
+    "rating": 1,
+    "text": "Приехали кататься по старой статье в интернете — там пусто, подъёмника нет. Хорошо, что на портале статус честно указан, теперь понятно.",
+    "is_approved": false,
+    "days_ago": 1
+  }
+]

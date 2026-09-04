@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Как добраться" %} — {% translate "Туризм округа" %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <h1 class="section-title">{% translate "Как добраться" %}</h1>
+      <div class="prose">
+        <p>
+          {% blocktranslate %}Округ окружает Благовещенск, поэтому дорога почти в любое село занимает от 15 минут до часа. Отправная точка — областной центр.{% endblocktranslate %}
+        </p>
+
+        <h2 class="h5 mt-4">{% translate "Самолётом" %}</h2>
+        <p>
+          {% blocktranslate %}Международный аэропорт Игнатьево находится в самом округе, рядом с одноимённым селом. От аэропорта до Благовещенска — около получаса на автомобиле.{% endblocktranslate %}
+        </p>
+
+        <h2 class="h5 mt-4">{% translate "Из Китая" %}</h2>
+        <p>
+          {% blocktranslate %}Через автомобильный мост Благовещенск — Хэйхэ и пункт пропуска «Кани-Курган», который работает круглосуточно. Пересечение границы возможно только через пункт пропуска и с оформленными документами.{% endblocktranslate %}
+        </p>
+
+        <h2 class="h5 mt-4">{% translate "По округу" %}</h2>
+        <p>
+          {% blocktranslate %}До крупных сёл ходят пригородные автобусы от автовокзала Благовещенска. До баз отдыха, пасек и природных точек удобнее на автомобиле: часть подъездов грунтовая, после дождя проезд может быть затруднён.{% endblocktranslate %}
+        </p>
+
+        <div class="notice mt-4">
+          {% blocktranslate %}Берег Амура — пограничная зона. Соблюдайте правила пограничного режима и требования пограничной службы, особенно при съёмке.{% endblocktranslate %}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="panel">
+        <h2 class="h6 mb-3">{% translate "Сёла округа" %}</h2>
+        <ul class="list-unstyled small mb-0">
+          {% for village in villages %}
+            <li class="mb-1">📍 <a href="{{ village.get_absolute_url }}">{{ village.name_i18n }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="panel mt-3">
+        <a href="{% url 'catalog:map' %}" class="btn btn-brand w-100">{% translate "Открыть карту" %}</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "О портале" %} — {% translate "Туризм округа" %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <div class="row">
+    <div class="col-lg-8">
+      <h1 class="section-title">{% translate "О портале" %}</h1>
+
+      <div class="prose">
+        <p>
+          {% blocktranslate %}Портал собирает в одном месте туристическое предложение Благовещенского муниципального округа Амурской области: базы отдыха и гостевые дома в сёлах, приграничные смотровые точки, памятники казачьей истории, природные места поймы Амура и Зеи, фермы и пасеки, а также события и готовые маршруты.{% endblocktranslate %}
+        </p>
+        <p>
+          {% blocktranslate %}Задача простая: сегодня сведения об объектах разбросаны по справочникам, областным сайтам и социальным сетям, поэтому гостю трудно за один заход понять, что в округе вообще есть. Портал даёт каталог с фильтрами, карту, календарь событий и маршруты — и делает это на трёх языках, включая китайский, потому что округ примыкает к границе и к мостовому переходу в Хэйхэ.{% endblocktranslate %}
+        </p>
+
+        <h2 class="h5 mt-4">{% translate "Что здесь есть" %}</h2>
+        <ul>
+          <li>{% translate "Каталог объектов с фильтрами по категории, селу и сезону" %}</li>
+          <li>{% translate "Карта на Leaflet и OpenStreetMap с маркерами по категориям" %}</li>
+          <li>{% translate "Календарь событий с фильтром по месяцу и селу" %}</li>
+          <li>{% translate "Готовые маршруты с последовательностью точек" %}</li>
+          <li>{% translate "Избранное и отзывы для зарегистрированных пользователей" %}</li>
+          <li>{% translate "Русская, английская и китайская версии интерфейса" %}</li>
+        </ul>
+
+        <h2 class="h5 mt-4">{% translate "Как мы обозначаем статусы" %}</h2>
+        <p>
+          {% blocktranslate %}Не всё, о чём пишут в интернете, работает на самом деле. Поэтому у каждого объекта есть статус, и он виден прямо на карточке.{% endblocktranslate %}
+        </p>
+        <ul>
+          <li><span class="chip">{% translate "Действующий" %}</span> — {% translate "объект принимает гостей" %}</li>
+          <li><span class="chip chip-warn">🏗 {% translate "Строится" %}</span> — {% translate "объект ещё не открыт, сроки могут сдвигаться" %}</li>
+          <li><span class="chip chip-danger">⛔ {% translate "Не действует" %}</span> — {% translate "поездку планировать нельзя" %}</li>
+          <li><span class="chip chip-info">📍 {% translate "Рядом с округом" %}</span> — {% translate "объект за границами округа, приведён для контекста" %}</li>
+          <li><span class="chip chip-tag">✎ {% translate "Учебные данные" %}</span> — {% translate "название и услуги условные" %}</li>
+        </ul>
+
+        <div class="notice mt-4">
+          <strong>{% translate "Дисклеймер." %}</strong>
+          {% blocktranslate %}Это учебный проект. Пользователи и их данные вымышленные, интеграций с государственными системами нет, бронирования и оплаты не производятся. Названия сёл и публичных объектов реальные, часть коммерческих карточек — условные образцы. Перед практическим использованием сведения нужно сверить с актуальными источниками.{% endblocktranslate %}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="panel">
+        <h2 class="h6">{% translate "Технологии" %}</h2>
+        <ul class="small mb-0 ps-3">
+          <li>Python, Django</li>
+          <li>PostgreSQL / SQLite</li>
+          <li>Bootstrap 5</li>
+          <li>Leaflet + OpenStreetMap</li>
+        </ul>
+      </div>
+      <div class="panel mt-3">
+        <h2 class="h6">{% translate "Полезные страницы" %}</h2>
+        <ul class="small mb-0 ps-3">
+          <li><a href="{% url 'catalog:how_to_get' %}">{% translate "Как добраться" %}</a></li>
+          <li><a href="{% url 'catalog:contacts' %}">{% translate "Контакты" %}</a></li>
+          <li><a href="{% url 'catalog:map' %}">{% translate "Карта округа" %}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

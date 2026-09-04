@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{{ route.title_i18n }} — {% translate "Маршруты" %}{% endblock %}
+{% block description %}{{ route.description_i18n|truncatewords:24 }}{% endblock %}
+
+{% block content %}
+<div class="detail-header">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb small mb-2">
+        <li class="breadcrumb-item"><a href="{% url 'catalog:home' %}">{% translate "Главная" %}</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'catalog:route_list' %}">{% translate "Маршруты" %}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ route.title_i18n }}</li>
+      </ol>
+    </nav>
+    <h1 class="h3 mb-2">{{ route.title_i18n }}</h1>
+    <div class="d-flex flex-wrap gap-1">
+      <span class="chip">⏱ {{ route.duration_i18n }}</span>
+      <span class="chip">{{ route.get_season_display }}</span>
+      <span class="chip">{{ route.get_difficulty_display }}</span>
+      <span class="chip">{{ points|length }} {% translate "точек" %}</span>
+    </div>
+  </div>
+</div>
+
+<div class="container py-4">
+  <div class="row g-4">
+    <div class="col-lg-7">
+      <div class="prose mb-4">{{ route.description_i18n|linebreaks }}</div>
+
+      <h2 class="h5 mb-3">{% translate "Программа" %}</h2>
+      <ul class="timeline">
+        {% for point in points %}
+          <li>
+            <span class="step">{{ forloop.counter }}</span>
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <h3 class="h6 mb-1">
+                <a href="{{ point.attraction.get_absolute_url }}" class="text-decoration-none">{{ point.attraction.title_i18n }}</a>
+              </h3>
+              {% if user.is_authenticated %}
+                <form method="post" action="{% url 'catalog:toggle_favorite' point.attraction.slug %}">
+                  {% csrf_token %}
+                  <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                  <button type="submit" class="fav-btn {% if point.attraction.slug in favorite_slugs %}active{% endif %}">♥</button>
+                </form>
+              {% endif %}
+            </div>
+            <div class="small text-muted mb-1">
+              {{ point.attraction.category.icon }} {{ point.attraction.category.name_i18n }}
+              {% if point.attraction.village %} · {{ point.attraction.village.name_i18n }}{% endif %}
+            </div>
+            {% if point.note %}<p class="small mb-1">{{ point.note }}</p>{% endif %}
+            {% include "includes/status_chip.html" with item=point.attraction %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="panel">
+        <h2 class="h6 mb-2">{% translate "Маршрут на карте" %}</h2>
+        <div id="map" class="map-box map-box-sm"></div>
+        <p class="small text-muted mt-2 mb-0">
+          {% blocktranslate %}Линия соединяет точки по порядку и показывает логику маршрута, а не реальную дорогу.{% endblocktranslate %}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{{ points_json|json_script:"route-points" }}
+<script src="{% static 'js/map.js' %}"></script>
+<script>
+  portalMap.route(document.getElementById('map'), {
+    center: [{{ portal.map_center.0 }}, {{ portal.map_center.1 }}],
+    zoom: {{ portal.map_zoom }},
+    points: JSON.parse(document.getElementById('route-points').textContent)
+  });
+</script>
+{% endblock %}

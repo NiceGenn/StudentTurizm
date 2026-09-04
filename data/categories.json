@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "rest",
+    "name": "Базы отдыха и гостевые дома",
+    "name_en": "Resorts and guest houses",
+    "name_zh": "休闲基地与民宿",
+    "icon": "🏡",
+    "color": "#2e7d32",
+    "order": 10
+  },
+  {
+    "slug": "nature",
+    "name": "Природа и экотуризм",
+    "name_en": "Nature and ecotourism",
+    "name_zh": "自然与生态旅游",
+    "icon": "🌾",
+    "color": "#00897b",
+    "order": 20
+  },
+  {
+    "slug": "history",
+    "name": "История и казачество",
+    "name_en": "History and Cossack heritage",
+    "name_zh": "历史与哥萨克文化",
+    "icon": "🏛",
+    "color": "#8d6e63",
+    "order": 30
+  },
+  {
+    "slug": "border",
+    "name": "Приграничье",
+    "name_en": "Border area",
+    "name_zh": "边境地区",
+    "icon": "🌉",
+    "color": "#1565c0",
+    "order": 40
+  },
+  {
+    "slug": "agro",
+    "name": "Агротуризм",
+    "name_en": "Agritourism",
+    "name_zh": "乡村农业游",
+    "icon": "🐝",
+    "color": "#ef6c00",
+    "order": 50
+  },
+  {
+    "slug": "venue",
+    "name": "Событийные площадки",
+    "name_en": "Event venues",
+    "name_zh": "活动场地",
+    "icon": "🎪",
+    "color": "#6a1b9a",
+    "order": 60
+  }
+]

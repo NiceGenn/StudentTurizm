@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Контакты" %} — {% translate "Туризм округа" %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <div class="row g-4">
+    <div class="col-lg-7">
+      <h1 class="section-title">{% translate "Контакты" %}</h1>
+      <div class="prose">
+        <p>
+          {% blocktranslate %}Портал разработан как учебный проект по специальности «Информационные системы и программирование». Контактные данные ниже — демонстрационные.{% endblocktranslate %}
+        </p>
+        <ul>
+          <li>{% translate "Электронная почта" %}: <a href="mailto:{{ portal.contact_email }}">{{ portal.contact_email }}</a></li>
+          <li>{% translate "Территория" %}: {{ portal.district_name }}, {{ portal.region_name }}</li>
+        </ul>
+
+        <h2 class="h5 mt-4">{% translate "Владельцам объектов" %}</h2>
+        <p>
+          {% blocktranslate %}Если карточка вашего объекта содержит неточность или объект нужно добавить, напишите на указанную почту: контент-менеджер портала внесёт правки через панель управления.{% endblocktranslate %}
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="panel">
+        <h2 class="h6 mb-2">{% translate "Учебный проект" %}</h2>
+        <p class="small mb-0">
+          {% blocktranslate %}Персональные данные пользователей вымышленные. Портал не выполняет бронирований, не принимает платежи и не связан с государственными информационными системами.{% endblocktranslate %}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

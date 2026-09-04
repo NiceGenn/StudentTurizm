@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ event.title_i18n }} — {% translate "События" %}{% endblock %}
+{% block description %}{{ event.description_i18n|truncatewords:24 }}{% endblock %}
+
+{% block content %}
+<div class="detail-header">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb small mb-2">
+        <li class="breadcrumb-item"><a href="{% url 'catalog:home' %}">{% translate "Главная" %}</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'catalog:event_list' %}">{% translate "События" %}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ event.title_i18n }}</li>
+      </ol>
+    </nav>
+    <h1 class="h3 mb-2">{{ event.title_i18n }}</h1>
+    <div class="d-flex flex-wrap gap-1">
+      <span class="chip">📅 {{ event.date_start|date:"d.m.Y" }}{% if event.date_end %} — {{ event.date_end|date:"d.m.Y" }}{% endif %}</span>
+      {% if event.village %}
+        <a href="{{ event.village.get_absolute_url }}" class="chip text-decoration-none">📍 {{ event.village.name_i18n }}</a>
+      {% endif %}
+      {% if event.is_past %}<span class="chip chip-tag">{% translate "прошло" %}</span>{% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="container py-4">
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div class="prose">{{ event.description_i18n|linebreaks }}</div>
+      {% if event.fact_note %}<div class="notice mt-3">{{ event.fact_note|linebreaksbr }}</div>{% endif %}
+    </div>
+    <div class="col-lg-4">
+      {% if event.attraction %}
+        <div class="panel">
+          <h2 class="h6 mb-2">{% translate "Площадка" %}</h2>
+          <p class="small mb-2">
+            <a href="{{ event.attraction.get_absolute_url }}">{{ event.attraction.title_i18n }}</a>
+          </p>
+          <p class="small text-muted mb-0">{{ event.attraction.short_description_i18n }}</p>
+        </div>
+      {% endif %}
+      <div class="panel mt-3">
+        <h2 class="h6 mb-2">{% translate "Другие события" %}</h2>
+        <a href="{% url 'catalog:event_list' %}" class="btn btn-sm btn-outline-brand">{% translate "Открыть календарь" %}</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

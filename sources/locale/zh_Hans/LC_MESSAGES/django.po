@@ -1,0 +1,899 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Tourism portal of the Blagoveshchensk district\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 22:55+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: accounts/forms.py:15 accounts/forms.py:47
+msgid "Имя"
+msgstr "名字"
+
+#: accounts/forms.py:16 accounts/forms.py:48
+msgid "Фамилия"
+msgstr "姓氏"
+
+#: accounts/forms.py:17 accounts/forms.py:49 templates/pages/contacts.html:16
+msgid "Электронная почта"
+msgstr "电子邮箱"
+
+#: accounts/forms.py:31
+msgid "Пользователь с такой почтой уже зарегистрирован."
+msgstr "该邮箱已被注册。"
+
+#: accounts/forms.py:60
+msgid "Эта почта уже используется другим пользователем."
+msgstr "该邮箱已被其他用户使用。"
+
+#: accounts/views.py:21
+msgid "Регистрация завершена. Добро пожаловать!"
+msgstr "注册完成，欢迎！"
+
+#: accounts/views.py:35
+msgid "Профиль сохранён."
+msgstr "个人资料已保存。"
+
+#: catalog/forms.py:14
+msgid "Оценка"
+msgstr "评分"
+
+#: catalog/forms.py:15
+msgid "Ваш отзыв"
+msgstr "您的评价"
+
+#: catalog/forms.py:23
+msgid "Расскажите, что понравилось и что стоит учесть другим гостям"
+msgstr "请说说您喜欢什么，以及其他客人需要注意什么"
+
+#: catalog/forms.py:31
+msgid "Отзыв слишком короткий — напишите хотя бы 20 символов."
+msgstr "评价太短，请至少填写20个字符。"
+
+#: catalog/forms.py:40
+msgid "Поиск"
+msgstr "搜索"
+
+#: catalog/forms.py:41
+msgid "Название, тег, описание"
+msgstr "名称、标签、描述"
+
+#: catalog/forms.py:43
+msgid "Категория"
+msgstr "类别"
+
+#: catalog/forms.py:44 templates/catalog/event_list.html:23
+msgid "Село"
+msgstr "村庄"
+
+#: catalog/forms.py:45 templates/catalog/route_list.html:12
+msgid "Сезон"
+msgstr "季节"
+
+#: catalog/forms.py:46
+msgid "Сортировка"
+msgstr "排序"
+
+#: catalog/forms.py:50 templates/catalog/event_list.html:25
+#: templates/catalog/route_list.html:13
+msgid "Все"
+msgstr "全部"
+
+#: catalog/views.py:31
+msgid "По названию"
+msgstr "按名称"
+
+#: catalog/views.py:32
+msgid "По рейтингу"
+msgstr "按评分"
+
+#: catalog/views.py:33
+msgid "Сначала новые"
+msgstr "最新优先"
+
+#: catalog/views.py:148
+msgid "Вы уже оставляли отзыв об этом объекте."
+msgstr "您已经评价过该地点。"
+
+#: catalog/views.py:159
+msgid ""
+"Спасибо! Отзыв отправлен на модерацию и появится на странице после проверки."
+msgstr "谢谢！评价已提交审核，通过后将显示在页面上。"
+
+#: catalog/views.py:247
+msgid "Январь"
+msgstr "一月"
+
+#: catalog/views.py:247
+msgid "Февраль"
+msgstr "二月"
+
+#: catalog/views.py:247
+msgid "Март"
+msgstr "三月"
+
+#: catalog/views.py:247
+msgid "Апрель"
+msgstr "四月"
+
+#: catalog/views.py:247
+msgid "Май"
+msgstr "五月"
+
+#: catalog/views.py:247
+msgid "Июнь"
+msgstr "六月"
+
+#: catalog/views.py:248
+msgid "Июль"
+msgstr "七月"
+
+#: catalog/views.py:248
+msgid "Август"
+msgstr "八月"
+
+#: catalog/views.py:248
+msgid "Сентябрь"
+msgstr "九月"
+
+#: catalog/views.py:248
+msgid "Октябрь"
+msgstr "十月"
+
+#: catalog/views.py:248
+msgid "Ноябрь"
+msgstr "十一月"
+
+#: catalog/views.py:248
+msgid "Декабрь"
+msgstr "十二月"
+
+#: catalog/views.py:331
+msgid "Объект убран из избранного."
+msgstr "已从收藏中移除。"
+
+#: catalog/views.py:334
+msgid "Объект добавлен в избранное."
+msgstr "已加入收藏。"
+
+#: templates/accounts/favorites.html:4 templates/accounts/favorites.html:8
+#: templates/accounts/profile.html:31 templates/base.html:57
+msgid "Избранное"
+msgstr "收藏"
+
+#: templates/accounts/favorites.html:4 templates/accounts/login.html:4
+#: templates/accounts/profile.html:4 templates/accounts/register.html:4
+#: templates/base.html:25 templates/catalog/attraction_detail.html:4
+#: templates/catalog/attraction_list.html:4
+#: templates/catalog/event_list.html:4 templates/catalog/map.html:4
+#: templates/catalog/route_list.html:4 templates/pages/about.html:4
+#: templates/pages/contacts.html:4 templates/pages/how_to_get.html:4
+msgid "Туризм округа"
+msgstr "全区旅游"
+
+#: templates/accounts/favorites.html:9
+msgid "Объекты, которые вы сохранили для поездки."
+msgstr "您为此行收藏的地点。"
+
+#: templates/accounts/favorites.html:19
+msgid "Список пуст. Добавляйте объекты кнопкой ♥ в каталоге."
+msgstr "列表为空。请在目录中用 ♥ 按钮添加地点。"
+
+#: templates/accounts/favorites.html:20 templates/catalog/home.html:16
+msgid "Открыть каталог"
+msgstr "打开目录"
+
+#: templates/accounts/login.html:4 templates/base.html:77
+msgid "Вход"
+msgstr "登录"
+
+#: templates/accounts/login.html:11
+msgid "Вход на портал"
+msgstr "登录门户"
+
+#: templates/accounts/login.html:14
+msgid "Неверное имя пользователя или пароль."
+msgstr "用户名或密码错误。"
+
+#: templates/accounts/login.html:28
+msgid "Войти"
+msgstr "登录"
+
+#: templates/accounts/login.html:32
+msgid "Нет аккаунта?"
+msgstr "还没有账号？"
+
+#: templates/accounts/login.html:32
+msgid "Зарегистрируйтесь"
+msgstr "去注册"
+
+#: templates/accounts/profile.html:4 templates/base.html:63
+msgid "Профиль"
+msgstr "个人资料"
+
+#: templates/accounts/profile.html:8
+msgid "Личный кабинет"
+msgstr "个人中心"
+
+#: templates/accounts/profile.html:14
+msgid "Данные профиля"
+msgstr "资料信息"
+
+#: templates/accounts/profile.html:24
+msgid "Сохранить"
+msgstr "保存"
+
+#: templates/accounts/profile.html:32
+msgid "Сохранённых объектов"
+msgstr "已收藏地点"
+
+#: templates/accounts/profile.html:33
+msgid "Открыть список"
+msgstr "打开列表"
+
+#: templates/accounts/profile.html:37
+msgid "Мои отзывы"
+msgstr "我的评价"
+
+#: templates/accounts/profile.html:47
+msgid "опубликован"
+msgstr "已发布"
+
+#: templates/accounts/profile.html:49
+msgid "на модерации"
+msgstr "审核中"
+
+#: templates/accounts/profile.html:54
+msgid "Вы ещё не оставляли отзывов."
+msgstr "您还没有写过评价。"
+
+#: templates/accounts/register.html:4 templates/accounts/register.html:11
+#: templates/base.html:78
+msgid "Регистрация"
+msgstr "注册"
+
+#: templates/accounts/register.html:13
+msgid "Аккаунт нужен, чтобы сохранять объекты в избранное и оставлять отзывы."
+msgstr "注册账号后即可收藏地点并发表评价。"
+
+#: templates/accounts/register.html:29
+msgid "Зарегистрироваться"
+msgstr "创建账号"
+
+#: templates/accounts/register.html:33
+msgid "Учебный проект: не вводите настоящие персональные данные."
+msgstr "教学项目：请勿填写真实个人信息。"
+
+#: templates/base.html:6 templates/catalog/home.html:4
+msgid "Туристический портал Благовещенского округа"
+msgstr "布拉戈维申斯克区旅游门户"
+
+#: templates/base.html:7
+msgid ""
+"Туристические объекты, события и маршруты Благовещенского муниципального "
+"округа Амурской области."
+msgstr "阿穆尔州布拉戈维申斯克市政区的旅游景点、活动与线路。"
+
+#: templates/base.html:28
+msgid "Меню"
+msgstr "菜单"
+
+#: templates/base.html:34 templates/catalog/attraction_detail.html:13
+msgid "Каталог"
+msgstr "目录"
+
+#: templates/base.html:35
+msgid "Карта"
+msgstr "地图"
+
+#: templates/base.html:36 templates/catalog/route_detail.html:4
+#: templates/catalog/route_detail.html:13 templates/catalog/route_list.html:4
+msgid "Маршруты"
+msgstr "线路"
+
+#: templates/base.html:37 templates/catalog/event_detail.html:4
+#: templates/catalog/event_detail.html:13
+msgid "События"
+msgstr "活动"
+
+#: templates/base.html:38 templates/base.html:109 templates/pages/about.html:4
+#: templates/pages/about.html:10
+msgid "О портале"
+msgstr "关于门户"
+
+#: templates/base.html:45
+msgid "Язык интерфейса"
+msgstr "界面语言"
+
+#: templates/base.html:65
+msgid "Панель управления"
+msgstr "管理面板"
+
+#: templates/base.html:71
+msgid "Выйти"
+msgstr "退出"
+
+#: templates/base.html:90
+msgid "Закрыть"
+msgstr "关闭"
+
+#: templates/base.html:104
+msgid "Туристический портал"
+msgstr "旅游门户"
+
+#: templates/base.html:110 templates/pages/about.html:62
+#: templates/pages/how_to_get.html:4 templates/pages/how_to_get.html:10
+msgid "Как добраться"
+msgstr "如何到达"
+
+#: templates/base.html:111 templates/pages/about.html:63
+#: templates/pages/contacts.html:4 templates/pages/contacts.html:10
+msgid "Контакты"
+msgstr "联系方式"
+
+#: templates/base.html:116
+msgid ""
+"Учебный проект. Данные пользователей вымышленные, бронирования и платежи не "
+"производятся."
+msgstr "教学项目。用户数据均为虚构，不提供预订与支付。"
+
+#: templates/base.html:117
+msgid "Картографическая основа"
+msgstr "地图数据"
+
+#: templates/catalog/attraction_detail.html:12
+#: templates/catalog/event_detail.html:12
+#: templates/catalog/route_detail.html:12
+#: templates/catalog/village_detail.html:11
+msgid "Главная"
+msgstr "首页"
+
+#: templates/catalog/attraction_detail.html:39
+msgid "В избранном"
+msgstr "已收藏"
+
+#: templates/catalog/attraction_detail.html:39
+#: templates/includes/attraction_card.html:24
+msgid "В избранное"
+msgstr "加入收藏"
+
+#: templates/catalog/attraction_detail.html:44
+msgid "Войдите, чтобы сохранить"
+msgstr "登录后可收藏"
+
+#: templates/catalog/attraction_detail.html:71
+msgid "Объект не действует."
+msgstr "该地点未运营。"
+
+#: templates/catalog/attraction_detail.html:72
+msgid ""
+"Не планируйте сюда поездку: карточка оставлена как справка и предупреждение."
+msgstr "请勿安排前往：此条目仅作参考与提示。"
+
+#: templates/catalog/attraction_detail.html:77
+msgid "Объект ещё не принимает посетителей — сроки могут сдвигаться."
+msgstr "该项目尚未对外开放，时间可能变动。"
+
+#: templates/catalog/attraction_detail.html:97
+msgid "Отзывы"
+msgstr "评价"
+
+#: templates/catalog/attraction_detail.html:109
+msgid "Отзывов пока нет. Ваш может стать первым."
+msgstr "暂无评价，欢迎成为第一位。"
+
+#: templates/catalog/attraction_detail.html:115
+msgid "Войдите"
+msgstr "登录"
+
+#: templates/catalog/attraction_detail.html:116
+msgid "или"
+msgstr "或"
+
+#: templates/catalog/attraction_detail.html:117
+msgid "зарегистрируйтесь"
+msgstr "注册"
+
+#: templates/catalog/attraction_detail.html:118
+msgid "чтобы оставить отзыв."
+msgstr "后即可发表评价。"
+
+#: templates/catalog/attraction_detail.html:122
+msgid "Вы уже оставили отзыв об этом объекте."
+msgstr "您已经评价过该地点。"
+
+#: templates/catalog/attraction_detail.html:124
+msgid "На модерации"
+msgstr "审核中"
+
+#: templates/catalog/attraction_detail.html:128
+msgid "Оставить отзыв"
+msgstr "发表评价"
+
+#: templates/catalog/attraction_detail.html:142
+msgid "Отправить"
+msgstr "提交"
+
+#: templates/catalog/attraction_detail.html:143
+msgid "Отзыв появится после проверки модератором."
+msgstr "评价经审核后显示。"
+
+#: templates/catalog/attraction_detail.html:151
+#: templates/catalog/attraction_list.html:39
+msgid "На карте"
+msgstr "地图位置"
+
+#: templates/catalog/attraction_detail.html:164
+msgid "Входит в маршруты"
+msgstr "所属线路"
+
+#: templates/catalog/attraction_detail.html:175
+msgid "События на площадке"
+msgstr "该场地的活动"
+
+#: templates/catalog/attraction_detail.html:186
+msgid "Рядом"
+msgstr "附近"
+
+#: templates/catalog/attraction_list.html:4
+msgid "Каталог объектов"
+msgstr "景点目录"
+
+#: templates/catalog/attraction_list.html:8
+msgid "Каталог туристических объектов"
+msgstr "旅游景点目录"
+
+#: templates/catalog/attraction_list.html:9
+msgid ""
+"Фильтруйте по категории, селу и сезону — или ищите по названию и тегам."
+msgstr "可按类别、村庄和季节筛选，也可按名称与标签搜索。"
+
+#: templates/catalog/attraction_list.html:35
+#: templates/catalog/event_list.html:38
+msgid "Показать"
+msgstr "显示"
+
+#: templates/catalog/attraction_list.html:37
+msgid "Сбросить"
+msgstr "重置"
+
+#: templates/catalog/attraction_list.html:43
+#, python-format
+msgid "Найден %(counter)s объект"
+msgid_plural "Найдено объектов: %(counter)s"
+msgstr[0] "找到 %(counter)s 个地点"
+
+#: templates/catalog/attraction_list.html:51
+msgid "По вашему запросу ничего не найдено. Попробуйте изменить фильтры."
+msgstr "未找到符合条件的结果，请调整筛选条件。"
+
+#: templates/catalog/attraction_list.html:58
+msgid "Страницы каталога"
+msgstr "目录分页"
+
+#: templates/catalog/attraction_list.html:77
+#: templates/includes/status_chip.html:13 templates/pages/about.html:38
+msgid "Рядом с округом"
+msgstr "邻近本区"
+
+#: templates/catalog/attraction_list.html:78
+msgid ""
+"Объекты регионального контекста: они находятся за границами округа и в его "
+"маршруты не включаются."
+msgstr "区域背景对象：位于本区之外，不纳入本区线路。"
+
+#: templates/catalog/event_detail.html:23 templates/catalog/event_list.html:56
+msgid "прошло"
+msgstr "已结束"
+
+#: templates/catalog/event_detail.html:37
+msgid "Площадка"
+msgstr "场地"
+
+#: templates/catalog/event_detail.html:45
+msgid "Другие события"
+msgstr "其他活动"
+
+#: templates/catalog/event_detail.html:46
+msgid "Открыть календарь"
+msgstr "打开日历"
+
+#: templates/catalog/event_list.html:4
+msgid "Календарь событий"
+msgstr "活动日历"
+
+#: templates/catalog/event_list.html:8
+msgid "Календарь событий округа"
+msgstr "全区活动日历"
+
+#: templates/catalog/event_list.html:9
+msgid "Праздники, ярмарки, реконструкции и экотуры по сёлам."
+msgstr "各村的节庆、集市、历史重演与生态游。"
+
+#: templates/catalog/event_list.html:14
+msgid "Месяц"
+msgstr "月份"
+
+#: templates/catalog/event_list.html:16
+msgid "Любой"
+msgstr "任意"
+
+#: templates/catalog/event_list.html:34
+msgid "Показать прошедшие"
+msgstr "显示已结束活动"
+
+#: templates/catalog/event_list.html:64
+msgid "Событий по заданным условиям не найдено."
+msgstr "未找到符合条件的活动。"
+
+#: templates/catalog/home.html:11
+msgid "Отдых в Благовещенском округе"
+msgstr "布拉戈维申斯克区休闲游"
+
+#: templates/catalog/home.html:13
+msgid ""
+"Базы отдыха и гостевые дома, приграничные смотровые точки, казачья история, "
+"пойма Амура и Зеи, фермы и пасеки — в одном месте, с картой, календарём "
+"событий и готовыми маршрутами."
+msgstr "休闲基地与民宿、边境观景点、哥萨克历史、阿穆尔河与结雅河漫滩、农场与养蜂场——集中呈现，并配地图、活动日历和现成线路。"
+
+#: templates/catalog/home.html:17
+msgid "Смотреть на карте"
+msgstr "在地图上查看"
+
+#: templates/catalog/home.html:22
+msgid "объектов округа"
+msgstr "个区内景点"
+
+#: templates/catalog/home.html:23
+msgid "сёл на карте"
+msgstr "个村庄上图"
+
+#: templates/catalog/home.html:24
+msgid "готовых маршрутов"
+msgstr "条现成线路"
+
+#: templates/catalog/home.html:25
+msgid "событий в календаре"
+msgstr "项日历活动"
+
+#: templates/catalog/home.html:33
+msgid "Куда поехать"
+msgstr "去哪儿玩"
+
+#: templates/catalog/home.html:34
+msgid "Категории объектов округа"
+msgstr "全区景点类别"
+
+#: templates/catalog/home.html:52
+msgid "Рекомендуем"
+msgstr "推荐"
+
+#: templates/catalog/home.html:53
+msgid "Действующие объекты в границах округа"
+msgstr "区内运营中的景点"
+
+#: templates/catalog/home.html:55
+msgid "Все объекты"
+msgstr "全部景点"
+
+#: templates/catalog/home.html:61
+msgid ""
+"Каталог пока пуст. Загрузите демонстрационные данные командой seed_demo."
+msgstr "目录为空，请用 seed_demo 命令载入演示数据。"
+
+#: templates/catalog/home.html:70
+msgid "Готовые маршруты"
+msgstr "现成线路"
+
+#: templates/catalog/home.html:71
+msgid "Все маршруты"
+msgstr "全部线路"
+
+#: templates/catalog/home.html:79 templates/catalog/route_detail.html:22
+#: templates/catalog/route_list.html:28
+msgid "точек"
+msgstr "个点位"
+
+#: templates/catalog/home.html:83 templates/catalog/route_list.html:40
+msgid "Маршруты пока не добавлены."
+msgstr "尚未添加线路。"
+
+#: templates/catalog/home.html:89 templates/catalog/village_detail.html:32
+msgid "Ближайшие события"
+msgstr "近期活动"
+
+#: templates/catalog/home.html:90
+msgid "Календарь"
+msgstr "日历"
+
+#: templates/catalog/home.html:104
+msgid "Ближайших событий нет."
+msgstr "暂无近期活动。"
+
+#: templates/catalog/map.html:4 templates/pages/about.html:64
+msgid "Карта округа"
+msgstr "全区地图"
+
+#: templates/catalog/map.html:8
+msgid "Карта туристических объектов"
+msgstr "旅游景点地图"
+
+#: templates/catalog/map.html:9
+msgid ""
+"Нажмите на маркер, чтобы открыть карточку объекта. Категории можно скрывать."
+msgstr "点击标记可打开景点详情，类别可隐藏。"
+
+#: templates/catalog/map.html:14
+msgid "Категории"
+msgstr "类别"
+
+#: templates/catalog/map.html:26
+msgid ""
+"Координаты объектов в учебной базе указаны приблизительно и годятся для "
+"навигации по селу, но не для выхода в точку по GPS."
+msgstr "教学数据库中的坐标为近似值，可用于找到村庄，但不足以按GPS精确导航到点位。"
+
+#: templates/catalog/route_detail.html:32
+msgid "Программа"
+msgstr "行程"
+
+#: templates/catalog/route_detail.html:62
+msgid "Маршрут на карте"
+msgstr "线路地图"
+
+#: templates/catalog/route_detail.html:65
+msgid ""
+"Линия соединяет точки по порядку и показывает логику маршрута, а не реальную"
+" дорогу."
+msgstr "连线按顺序连接各点，展示线路逻辑，并非真实道路。"
+
+#: templates/catalog/route_list.html:8
+msgid "Готовые маршруты по округу"
+msgstr "全区现成线路"
+
+#: templates/catalog/route_list.html:9
+msgid "Собранные последовательности объектов — можно ехать по ним как есть."
+msgstr "已编排好的景点顺序，可直接照此出行。"
+
+#: templates/catalog/route_list.html:36
+msgid "Открыть маршрут"
+msgstr "打开线路"
+
+#: templates/catalog/village_detail.html:4
+#: templates/catalog/village_detail.html:12 templates/pages/how_to_get.html:39
+msgid "Сёла округа"
+msgstr "全区村庄"
+
+#: templates/catalog/village_detail.html:22
+msgid "Объекты села"
+msgstr "本村景点"
+
+#: templates/catalog/village_detail.html:27
+msgid "Для этого села объекты пока не добавлены."
+msgstr "该村尚未添加景点。"
+
+#: templates/includes/attraction_card.html:24
+msgid "Убрать из избранного"
+msgstr "取消收藏"
+
+#: templates/includes/status_chip.html:6
+msgid "Объект не работает"
+msgstr "该地点未运营"
+
+#: templates/includes/status_chip.html:13
+msgid "Объект расположен за границами округа"
+msgstr "该地点位于本区之外"
+
+#: templates/includes/status_chip.html:16
+msgid "Название и услуги условные, карточка учебная"
+msgstr "名称与服务为示例，此为教学条目"
+
+#: templates/includes/status_chip.html:16 templates/pages/about.html:39
+msgid "Учебные данные"
+msgstr "教学数据"
+
+#: templates/pages/about.html:14
+msgid ""
+"Портал собирает в одном месте туристическое предложение Благовещенского "
+"муниципального округа Амурской области: базы отдыха и гостевые дома в сёлах,"
+" приграничные смотровые точки, памятники казачьей истории, природные места "
+"поймы Амура и Зеи, фермы и пасеки, а также события и готовые маршруты."
+msgstr ""
+"本门户集中呈现阿穆尔州布拉戈维申斯克市政区的旅游资源：各村的休闲基地与民宿、边境观景点、哥萨克历史遗迹、阿穆尔河与结雅河漫滩的自然景观、农场与养蜂场，以及活动和现成线路。"
+
+#: templates/pages/about.html:17
+msgid ""
+"Задача простая: сегодня сведения об объектах разбросаны по справочникам, "
+"областным сайтам и социальным сетям, поэтому гостю трудно за один заход "
+"понять, что в округе вообще есть. Портал даёт каталог с фильтрами, карту, "
+"календарь событий и маршруты — и делает это на трёх языках, включая "
+"китайский, потому что округ примыкает к границе и к мостовому переходу в "
+"Хэйхэ."
+msgstr ""
+"目标很简单：目前相关信息散落在各类名录、州级网站和社交媒体上，游客难以一次性了解全区有什么。门户提供可筛选的目录、地图、活动日历与线路，并以三种语言呈现（含中文），因为本区紧邻边境和通往黑河的大桥口岸。"
+
+#: templates/pages/about.html:20
+msgid "Что здесь есть"
+msgstr "本站内容"
+
+#: templates/pages/about.html:22
+msgid "Каталог объектов с фильтрами по категории, селу и сезону"
+msgstr "可按类别、村庄和季节筛选的景点目录"
+
+#: templates/pages/about.html:23
+msgid "Карта на Leaflet и OpenStreetMap с маркерами по категориям"
+msgstr "基于 Leaflet 与 OpenStreetMap、按类别标记的地图"
+
+#: templates/pages/about.html:24
+msgid "Календарь событий с фильтром по месяцу и селу"
+msgstr "可按月份和村庄筛选的活动日历"
+
+#: templates/pages/about.html:25
+msgid "Готовые маршруты с последовательностью точек"
+msgstr "带点位顺序的现成线路"
+
+#: templates/pages/about.html:26
+msgid "Избранное и отзывы для зарегистрированных пользователей"
+msgstr "注册用户可使用收藏与评价"
+
+#: templates/pages/about.html:27
+msgid "Русская, английская и китайская версии интерфейса"
+msgstr "俄语、英语和中文界面"
+
+#: templates/pages/about.html:30
+msgid "Как мы обозначаем статусы"
+msgstr "我们如何标注状态"
+
+#: templates/pages/about.html:32
+msgid ""
+"Не всё, о чём пишут в интернете, работает на самом деле. Поэтому у каждого "
+"объекта есть статус, и он виден прямо на карточке."
+msgstr "网上写到的并非都在实际运营，因此每个地点都有状态标注，直接显示在条目上。"
+
+#: templates/pages/about.html:35
+msgid "Действующий"
+msgstr "运营中"
+
+#: templates/pages/about.html:35
+msgid "объект принимает гостей"
+msgstr "该地点接待游客"
+
+#: templates/pages/about.html:36
+msgid "Строится"
+msgstr "在建"
+
+#: templates/pages/about.html:36
+msgid "объект ещё не открыт, сроки могут сдвигаться"
+msgstr "尚未开放，时间可能变动"
+
+#: templates/pages/about.html:37
+msgid "Не действует"
+msgstr "未运营"
+
+#: templates/pages/about.html:37
+msgid "поездку планировать нельзя"
+msgstr "请勿安排前往"
+
+#: templates/pages/about.html:38
+msgid "объект за границами округа, приведён для контекста"
+msgstr "位于本区之外，仅作背景列出"
+
+#: templates/pages/about.html:39
+msgid "название и услуги условные"
+msgstr "名称与服务为示例"
+
+#: templates/pages/about.html:43
+msgid "Дисклеймер."
+msgstr "免责声明。"
+
+#: templates/pages/about.html:44
+msgid ""
+"Это учебный проект. Пользователи и их данные вымышленные, интеграций с "
+"государственными системами нет, бронирования и оплаты не производятся. "
+"Названия сёл и публичных объектов реальные, часть коммерческих карточек — "
+"условные образцы. Перед практическим использованием сведения нужно сверить с"
+" актуальными источниками."
+msgstr ""
+"这是教学项目。用户及其数据均为虚构，未与政府系统对接，不办理预订与支付。村庄和公共设施名称属实，部分商业条目为示例。实际使用前须核对最新资料。"
+
+#: templates/pages/about.html:51
+msgid "Технологии"
+msgstr "技术栈"
+
+#: templates/pages/about.html:60
+msgid "Полезные страницы"
+msgstr "常用页面"
+
+#: templates/pages/contacts.html:13
+msgid ""
+"Портал разработан как учебный проект по специальности «Информационные "
+"системы и программирование». Контактные данные ниже — демонстрационные."
+msgstr "本门户为“信息系统与编程”专业的教学项目，以下联系方式仅作演示。"
+
+#: templates/pages/contacts.html:17
+msgid "Территория"
+msgstr "地域"
+
+#: templates/pages/contacts.html:20
+msgid "Владельцам объектов"
+msgstr "致地点经营者"
+
+#: templates/pages/contacts.html:22
+msgid ""
+"Если карточка вашего объекта содержит неточность или объект нужно добавить, "
+"напишите на указанную почту: контент-менеджер портала внесёт правки через "
+"панель управления."
+msgstr "如条目有误或需新增地点，请发送邮件至上述邮箱，门户的内容管理员将在管理面板中修改。"
+
+#: templates/pages/contacts.html:29
+msgid "Учебный проект"
+msgstr "教学项目"
+
+#: templates/pages/contacts.html:31
+msgid ""
+"Персональные данные пользователей вымышленные. Портал не выполняет "
+"бронирований, не принимает платежи и не связан с государственными "
+"информационными системами."
+msgstr "用户个人数据均为虚构。门户不办理预订、不收取款项，也不与政府信息系统相连。"
+
+#: templates/pages/how_to_get.html:13
+msgid ""
+"Округ окружает Благовещенск, поэтому дорога почти в любое село занимает от "
+"15 минут до часа. Отправная точка — областной центр."
+msgstr "本区环绕布拉戈维申斯克，前往几乎任何村庄只需15分钟至1小时，出发点即州首府。"
+
+#: templates/pages/how_to_get.html:16
+msgid "Самолётом"
+msgstr "乘飞机"
+
+#: templates/pages/how_to_get.html:18
+msgid ""
+"Международный аэропорт Игнатьево находится в самом округе, рядом с "
+"одноимённым селом. От аэропорта до Благовещенска — около получаса на "
+"автомобиле."
+msgstr "伊格纳季耶沃国际机场就在本区，毗邻同名村庄，驾车至布拉戈维申斯克约半小时。"
+
+#: templates/pages/how_to_get.html:21
+msgid "Из Китая"
+msgstr "自中国前往"
+
+#: templates/pages/how_to_get.html:23
+msgid ""
+"Через автомобильный мост Благовещенск — Хэйхэ и пункт пропуска «Кани-"
+"Курган», который работает круглосуточно. Пересечение границы возможно только"
+" через пункт пропуска и с оформленными документами."
+msgstr "经布拉戈维申斯克—黑河公路大桥及全天候运营的卡尼库尔干口岸。过境须经口岸并持有效证件。"
+
+#: templates/pages/how_to_get.html:26
+msgid "По округу"
+msgstr "区内交通"
+
+#: templates/pages/how_to_get.html:28
+msgid ""
+"До крупных сёл ходят пригородные автобусы от автовокзала Благовещенска. До "
+"баз отдыха, пасек и природных точек удобнее на автомобиле: часть подъездов "
+"грунтовая, после дождя проезд может быть затруднён."
+msgstr "从布拉戈维申斯克长途汽车站有近郊班车通往较大村庄。前往休闲基地、养蜂场和自然点位建议自驾：部分进出道路为土路，雨后通行不便。"
+
+#: templates/pages/how_to_get.html:32
+msgid ""
+"Берег Амура — пограничная зона. Соблюдайте правила пограничного режима и "
+"требования пограничной службы, особенно при съёмке."
+msgstr "阿穆尔河岸属边境地带，请遵守边境管理规定及边防部门要求，拍摄时尤须注意。"
+
+#: templates/pages/how_to_get.html:47
+msgid "Открыть карту"
+msgstr "打开地图"

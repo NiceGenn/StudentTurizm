@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% translate "Карта округа" %} — {% translate "Туризм округа" %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <h1 class="section-title">{% translate "Карта туристических объектов" %}</h1>
+  <p class="section-sub">{% translate "Нажмите на маркер, чтобы открыть карточку объекта. Категории можно скрывать." %}</p>
+
+  <div class="row g-3">
+    <div class="col-lg-3">
+      <div class="panel">
+        <h2 class="h6 mb-3">{% translate "Категории" %}</h2>
+        {% for category in categories %}
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" checked
+                   id="cat-{{ category.slug }}" data-category-toggle="{{ category.slug }}">
+            <label class="form-check-label small" for="cat-{{ category.slug }}">
+              <span style="color: {{ category.color }}">●</span> {{ category.icon }} {{ category.name_i18n }}
+            </label>
+          </div>
+        {% endfor %}
+        <hr>
+        <p class="small text-muted mb-0">
+          {% blocktranslate %}Координаты объектов в учебной базе указаны приблизительно и годятся для навигации по селу, но не для выхода в точку по GPS.{% endblocktranslate %}
+        </p>
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <div id="map"></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/map.js' %}"></script>
+<script>
+  portalMap.all(document.getElementById('map'), {
+    url: "{% url 'catalog:attractions_json' %}",
+    center: [{{ map_center.0 }}, {{ map_center.1 }}],
+    zoom: {{ map_zoom }}
+  });
+</script>
+{% endblock %}

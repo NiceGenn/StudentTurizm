@@ -1,0 +1,951 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Tourism portal of the Blagoveshchensk district\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 22:55+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: accounts/forms.py:15 accounts/forms.py:47
+msgid "Имя"
+msgstr "First name"
+
+#: accounts/forms.py:16 accounts/forms.py:48
+msgid "Фамилия"
+msgstr "Last name"
+
+#: accounts/forms.py:17 accounts/forms.py:49 templates/pages/contacts.html:16
+msgid "Электронная почта"
+msgstr "Email"
+
+#: accounts/forms.py:31
+msgid "Пользователь с такой почтой уже зарегистрирован."
+msgstr "A user with this email is already registered."
+
+#: accounts/forms.py:60
+msgid "Эта почта уже используется другим пользователем."
+msgstr "This email is already used by another user."
+
+#: accounts/views.py:21
+msgid "Регистрация завершена. Добро пожаловать!"
+msgstr "Registration complete. Welcome!"
+
+#: accounts/views.py:35
+msgid "Профиль сохранён."
+msgstr "Profile saved."
+
+#: catalog/forms.py:14
+msgid "Оценка"
+msgstr "Rating"
+
+#: catalog/forms.py:15
+msgid "Ваш отзыв"
+msgstr "Your review"
+
+#: catalog/forms.py:23
+msgid "Расскажите, что понравилось и что стоит учесть другим гостям"
+msgstr "Tell others what you liked and what they should keep in mind"
+
+#: catalog/forms.py:31
+msgid "Отзыв слишком короткий — напишите хотя бы 20 символов."
+msgstr "The review is too short — please write at least 20 characters."
+
+#: catalog/forms.py:40
+msgid "Поиск"
+msgstr "Search"
+
+#: catalog/forms.py:41
+msgid "Название, тег, описание"
+msgstr "Title, tag, description"
+
+#: catalog/forms.py:43
+msgid "Категория"
+msgstr "Category"
+
+#: catalog/forms.py:44 templates/catalog/event_list.html:23
+msgid "Село"
+msgstr "Village"
+
+#: catalog/forms.py:45 templates/catalog/route_list.html:12
+msgid "Сезон"
+msgstr "Season"
+
+#: catalog/forms.py:46
+msgid "Сортировка"
+msgstr "Sort by"
+
+#: catalog/forms.py:50 templates/catalog/event_list.html:25
+#: templates/catalog/route_list.html:13
+msgid "Все"
+msgstr "All"
+
+#: catalog/views.py:31
+msgid "По названию"
+msgstr "By title"
+
+#: catalog/views.py:32
+msgid "По рейтингу"
+msgstr "By rating"
+
+#: catalog/views.py:33
+msgid "Сначала новые"
+msgstr "Newest first"
+
+#: catalog/views.py:148
+msgid "Вы уже оставляли отзыв об этом объекте."
+msgstr "You have already reviewed this place."
+
+#: catalog/views.py:159
+msgid ""
+"Спасибо! Отзыв отправлен на модерацию и появится на странице после проверки."
+msgstr ""
+"Thank you! Your review has been sent for moderation and will appear once "
+"approved."
+
+#: catalog/views.py:247
+msgid "Январь"
+msgstr "January"
+
+#: catalog/views.py:247
+msgid "Февраль"
+msgstr "February"
+
+#: catalog/views.py:247
+msgid "Март"
+msgstr "March"
+
+#: catalog/views.py:247
+msgid "Апрель"
+msgstr "April"
+
+#: catalog/views.py:247
+msgid "Май"
+msgstr "May"
+
+#: catalog/views.py:247
+msgid "Июнь"
+msgstr "June"
+
+#: catalog/views.py:248
+msgid "Июль"
+msgstr "July"
+
+#: catalog/views.py:248
+msgid "Август"
+msgstr "August"
+
+#: catalog/views.py:248
+msgid "Сентябрь"
+msgstr "September"
+
+#: catalog/views.py:248
+msgid "Октябрь"
+msgstr "October"
+
+#: catalog/views.py:248
+msgid "Ноябрь"
+msgstr "November"
+
+#: catalog/views.py:248
+msgid "Декабрь"
+msgstr "December"
+
+#: catalog/views.py:331
+msgid "Объект убран из избранного."
+msgstr "Removed from favourites."
+
+#: catalog/views.py:334
+msgid "Объект добавлен в избранное."
+msgstr "Added to favourites."
+
+#: templates/accounts/favorites.html:4 templates/accounts/favorites.html:8
+#: templates/accounts/profile.html:31 templates/base.html:57
+msgid "Избранное"
+msgstr "Favourites"
+
+#: templates/accounts/favorites.html:4 templates/accounts/login.html:4
+#: templates/accounts/profile.html:4 templates/accounts/register.html:4
+#: templates/base.html:25 templates/catalog/attraction_detail.html:4
+#: templates/catalog/attraction_list.html:4
+#: templates/catalog/event_list.html:4 templates/catalog/map.html:4
+#: templates/catalog/route_list.html:4 templates/pages/about.html:4
+#: templates/pages/contacts.html:4 templates/pages/how_to_get.html:4
+msgid "Туризм округа"
+msgstr "District Tourism"
+
+#: templates/accounts/favorites.html:9
+msgid "Объекты, которые вы сохранили для поездки."
+msgstr "Places you saved for your trip."
+
+#: templates/accounts/favorites.html:19
+msgid "Список пуст. Добавляйте объекты кнопкой ♥ в каталоге."
+msgstr "The list is empty. Use the ♥ button in the catalogue to add places."
+
+#: templates/accounts/favorites.html:20 templates/catalog/home.html:16
+msgid "Открыть каталог"
+msgstr "Open the catalogue"
+
+#: templates/accounts/login.html:4 templates/base.html:77
+msgid "Вход"
+msgstr "Sign in"
+
+#: templates/accounts/login.html:11
+msgid "Вход на портал"
+msgstr "Sign in to the portal"
+
+#: templates/accounts/login.html:14
+msgid "Неверное имя пользователя или пароль."
+msgstr "Wrong username or password."
+
+#: templates/accounts/login.html:28
+msgid "Войти"
+msgstr "Sign in"
+
+#: templates/accounts/login.html:32
+msgid "Нет аккаунта?"
+msgstr "No account yet?"
+
+#: templates/accounts/login.html:32
+msgid "Зарегистрируйтесь"
+msgstr "Sign up"
+
+#: templates/accounts/profile.html:4 templates/base.html:63
+msgid "Профиль"
+msgstr "Profile"
+
+#: templates/accounts/profile.html:8
+msgid "Личный кабинет"
+msgstr "My account"
+
+#: templates/accounts/profile.html:14
+msgid "Данные профиля"
+msgstr "Profile details"
+
+#: templates/accounts/profile.html:24
+msgid "Сохранить"
+msgstr "Save"
+
+#: templates/accounts/profile.html:32
+msgid "Сохранённых объектов"
+msgstr "Saved places"
+
+#: templates/accounts/profile.html:33
+msgid "Открыть список"
+msgstr "Open the list"
+
+#: templates/accounts/profile.html:37
+msgid "Мои отзывы"
+msgstr "My reviews"
+
+#: templates/accounts/profile.html:47
+msgid "опубликован"
+msgstr "published"
+
+#: templates/accounts/profile.html:49
+msgid "на модерации"
+msgstr "under moderation"
+
+#: templates/accounts/profile.html:54
+msgid "Вы ещё не оставляли отзывов."
+msgstr "You have not written any reviews yet."
+
+#: templates/accounts/register.html:4 templates/accounts/register.html:11
+#: templates/base.html:78
+msgid "Регистрация"
+msgstr "Sign up"
+
+#: templates/accounts/register.html:13
+msgid "Аккаунт нужен, чтобы сохранять объекты в избранное и оставлять отзывы."
+msgstr "An account lets you save places to favourites and write reviews."
+
+#: templates/accounts/register.html:29
+msgid "Зарегистрироваться"
+msgstr "Create account"
+
+#: templates/accounts/register.html:33
+msgid "Учебный проект: не вводите настоящие персональные данные."
+msgstr "This is a student project: do not enter real personal data."
+
+#: templates/base.html:6 templates/catalog/home.html:4
+msgid "Туристический портал Благовещенского округа"
+msgstr "Blagoveshchensk District Tourism Portal"
+
+#: templates/base.html:7
+msgid ""
+"Туристические объекты, события и маршруты Благовещенского муниципального "
+"округа Амурской области."
+msgstr ""
+"Attractions, events and routes of the Blagoveshchensk municipal district, "
+"Amur region."
+
+#: templates/base.html:28
+msgid "Меню"
+msgstr "Menu"
+
+#: templates/base.html:34 templates/catalog/attraction_detail.html:13
+msgid "Каталог"
+msgstr "Catalogue"
+
+#: templates/base.html:35
+msgid "Карта"
+msgstr "Map"
+
+#: templates/base.html:36 templates/catalog/route_detail.html:4
+#: templates/catalog/route_detail.html:13 templates/catalog/route_list.html:4
+msgid "Маршруты"
+msgstr "Routes"
+
+#: templates/base.html:37 templates/catalog/event_detail.html:4
+#: templates/catalog/event_detail.html:13
+msgid "События"
+msgstr "Events"
+
+#: templates/base.html:38 templates/base.html:109 templates/pages/about.html:4
+#: templates/pages/about.html:10
+msgid "О портале"
+msgstr "About"
+
+#: templates/base.html:45
+msgid "Язык интерфейса"
+msgstr "Interface language"
+
+#: templates/base.html:65
+msgid "Панель управления"
+msgstr "Admin panel"
+
+#: templates/base.html:71
+msgid "Выйти"
+msgstr "Sign out"
+
+#: templates/base.html:90
+msgid "Закрыть"
+msgstr "Close"
+
+#: templates/base.html:104
+msgid "Туристический портал"
+msgstr "Tourism portal"
+
+#: templates/base.html:110 templates/pages/about.html:62
+#: templates/pages/how_to_get.html:4 templates/pages/how_to_get.html:10
+msgid "Как добраться"
+msgstr "Getting there"
+
+#: templates/base.html:111 templates/pages/about.html:63
+#: templates/pages/contacts.html:4 templates/pages/contacts.html:10
+msgid "Контакты"
+msgstr "Contacts"
+
+#: templates/base.html:116
+msgid ""
+"Учебный проект. Данные пользователей вымышленные, бронирования и платежи не "
+"производятся."
+msgstr ""
+"A student project. User data is fictional; no bookings or payments are made."
+
+#: templates/base.html:117
+msgid "Картографическая основа"
+msgstr "Map data"
+
+#: templates/catalog/attraction_detail.html:12
+#: templates/catalog/event_detail.html:12
+#: templates/catalog/route_detail.html:12
+#: templates/catalog/village_detail.html:11
+msgid "Главная"
+msgstr "Home"
+
+#: templates/catalog/attraction_detail.html:39
+msgid "В избранном"
+msgstr "In favourites"
+
+#: templates/catalog/attraction_detail.html:39
+#: templates/includes/attraction_card.html:24
+msgid "В избранное"
+msgstr "Add to favourites"
+
+#: templates/catalog/attraction_detail.html:44
+msgid "Войдите, чтобы сохранить"
+msgstr "Sign in to save"
+
+#: templates/catalog/attraction_detail.html:71
+msgid "Объект не действует."
+msgstr "This place is not operating."
+
+#: templates/catalog/attraction_detail.html:72
+msgid ""
+"Не планируйте сюда поездку: карточка оставлена как справка и предупреждение."
+msgstr ""
+"Do not plan a trip here: the card is kept as a reference and a warning."
+
+#: templates/catalog/attraction_detail.html:77
+msgid "Объект ещё не принимает посетителей — сроки могут сдвигаться."
+msgstr "The site is not open to visitors yet — the schedule may shift."
+
+#: templates/catalog/attraction_detail.html:97
+msgid "Отзывы"
+msgstr "Reviews"
+
+#: templates/catalog/attraction_detail.html:109
+msgid "Отзывов пока нет. Ваш может стать первым."
+msgstr "No reviews yet. Yours could be the first."
+
+#: templates/catalog/attraction_detail.html:115
+msgid "Войдите"
+msgstr "Sign in"
+
+#: templates/catalog/attraction_detail.html:116
+msgid "или"
+msgstr "or"
+
+#: templates/catalog/attraction_detail.html:117
+msgid "зарегистрируйтесь"
+msgstr "sign up"
+
+#: templates/catalog/attraction_detail.html:118
+msgid "чтобы оставить отзыв."
+msgstr "to write a review."
+
+#: templates/catalog/attraction_detail.html:122
+msgid "Вы уже оставили отзыв об этом объекте."
+msgstr "You have already reviewed this place."
+
+#: templates/catalog/attraction_detail.html:124
+msgid "На модерации"
+msgstr "Under moderation"
+
+#: templates/catalog/attraction_detail.html:128
+msgid "Оставить отзыв"
+msgstr "Write a review"
+
+#: templates/catalog/attraction_detail.html:142
+msgid "Отправить"
+msgstr "Submit"
+
+#: templates/catalog/attraction_detail.html:143
+msgid "Отзыв появится после проверки модератором."
+msgstr "The review will appear after a moderator approves it."
+
+#: templates/catalog/attraction_detail.html:151
+#: templates/catalog/attraction_list.html:39
+msgid "На карте"
+msgstr "On the map"
+
+#: templates/catalog/attraction_detail.html:164
+msgid "Входит в маршруты"
+msgstr "Part of these routes"
+
+#: templates/catalog/attraction_detail.html:175
+msgid "События на площадке"
+msgstr "Events at this venue"
+
+#: templates/catalog/attraction_detail.html:186
+msgid "Рядом"
+msgstr "Nearby"
+
+#: templates/catalog/attraction_list.html:4
+msgid "Каталог объектов"
+msgstr "Catalogue"
+
+#: templates/catalog/attraction_list.html:8
+msgid "Каталог туристических объектов"
+msgstr "Catalogue of attractions"
+
+#: templates/catalog/attraction_list.html:9
+msgid ""
+"Фильтруйте по категории, селу и сезону — или ищите по названию и тегам."
+msgstr "Filter by category, village and season — or search by title and tags."
+
+#: templates/catalog/attraction_list.html:35
+#: templates/catalog/event_list.html:38
+msgid "Показать"
+msgstr "Show"
+
+#: templates/catalog/attraction_list.html:37
+msgid "Сбросить"
+msgstr "Reset"
+
+#: templates/catalog/attraction_list.html:43
+#, python-format
+msgid "Найден %(counter)s объект"
+msgid_plural "Найдено объектов: %(counter)s"
+msgstr[0] "%(counter)s place found"
+msgstr[1] "%(counter)s places found"
+
+#: templates/catalog/attraction_list.html:51
+msgid "По вашему запросу ничего не найдено. Попробуйте изменить фильтры."
+msgstr "Nothing matches your request. Try changing the filters."
+
+#: templates/catalog/attraction_list.html:58
+msgid "Страницы каталога"
+msgstr "Catalogue pages"
+
+#: templates/catalog/attraction_list.html:77
+#: templates/includes/status_chip.html:13 templates/pages/about.html:38
+msgid "Рядом с округом"
+msgstr "Near the district"
+
+#: templates/catalog/attraction_list.html:78
+msgid ""
+"Объекты регионального контекста: они находятся за границами округа и в его "
+"маршруты не включаются."
+msgstr ""
+"Regional context: these places lie outside the district and are not included"
+" in its routes."
+
+#: templates/catalog/event_detail.html:23 templates/catalog/event_list.html:56
+msgid "прошло"
+msgstr "past"
+
+#: templates/catalog/event_detail.html:37
+msgid "Площадка"
+msgstr "Venue"
+
+#: templates/catalog/event_detail.html:45
+msgid "Другие события"
+msgstr "Other events"
+
+#: templates/catalog/event_detail.html:46
+msgid "Открыть календарь"
+msgstr "Open the calendar"
+
+#: templates/catalog/event_list.html:4
+msgid "Календарь событий"
+msgstr "Event calendar"
+
+#: templates/catalog/event_list.html:8
+msgid "Календарь событий округа"
+msgstr "District event calendar"
+
+#: templates/catalog/event_list.html:9
+msgid "Праздники, ярмарки, реконструкции и экотуры по сёлам."
+msgstr "Festivals, fairs, re-enactments and ecotours across the villages."
+
+#: templates/catalog/event_list.html:14
+msgid "Месяц"
+msgstr "Month"
+
+#: templates/catalog/event_list.html:16
+msgid "Любой"
+msgstr "Any"
+
+#: templates/catalog/event_list.html:34
+msgid "Показать прошедшие"
+msgstr "Show past events"
+
+#: templates/catalog/event_list.html:64
+msgid "Событий по заданным условиям не найдено."
+msgstr "No events match these conditions."
+
+#: templates/catalog/home.html:11
+msgid "Отдых в Благовещенском округе"
+msgstr "Travel in the Blagoveshchensk district"
+
+#: templates/catalog/home.html:13
+msgid ""
+"Базы отдыха и гостевые дома, приграничные смотровые точки, казачья история, "
+"пойма Амура и Зеи, фермы и пасеки — в одном месте, с картой, календарём "
+"событий и готовыми маршрутами."
+msgstr ""
+"Recreation centres and guest houses, border viewpoints, Cossack history, the"
+" Amur and Zeya floodplain, farms and apiaries — all in one place, with a "
+"map, an event calendar and ready-made routes."
+
+#: templates/catalog/home.html:17
+msgid "Смотреть на карте"
+msgstr "View on the map"
+
+#: templates/catalog/home.html:22
+msgid "объектов округа"
+msgstr "places in the district"
+
+#: templates/catalog/home.html:23
+msgid "сёл на карте"
+msgstr "villages on the map"
+
+#: templates/catalog/home.html:24
+msgid "готовых маршрутов"
+msgstr "ready-made routes"
+
+#: templates/catalog/home.html:25
+msgid "событий в календаре"
+msgstr "events in the calendar"
+
+#: templates/catalog/home.html:33
+msgid "Куда поехать"
+msgstr "Where to go"
+
+#: templates/catalog/home.html:34
+msgid "Категории объектов округа"
+msgstr "Categories of places in the district"
+
+#: templates/catalog/home.html:52
+msgid "Рекомендуем"
+msgstr "Featured"
+
+#: templates/catalog/home.html:53
+msgid "Действующие объекты в границах округа"
+msgstr "Operating places within the district"
+
+#: templates/catalog/home.html:55
+msgid "Все объекты"
+msgstr "All places"
+
+#: templates/catalog/home.html:61
+msgid ""
+"Каталог пока пуст. Загрузите демонстрационные данные командой seed_demo."
+msgstr ""
+"The catalogue is empty. Load the demo content with the seed_demo command."
+
+#: templates/catalog/home.html:70
+msgid "Готовые маршруты"
+msgstr "Ready-made routes"
+
+#: templates/catalog/home.html:71
+msgid "Все маршруты"
+msgstr "All routes"
+
+#: templates/catalog/home.html:79 templates/catalog/route_detail.html:22
+#: templates/catalog/route_list.html:28
+msgid "точек"
+msgstr "stops"
+
+#: templates/catalog/home.html:83 templates/catalog/route_list.html:40
+msgid "Маршруты пока не добавлены."
+msgstr "No routes have been added yet."
+
+#: templates/catalog/home.html:89 templates/catalog/village_detail.html:32
+msgid "Ближайшие события"
+msgstr "Upcoming events"
+
+#: templates/catalog/home.html:90
+msgid "Календарь"
+msgstr "Calendar"
+
+#: templates/catalog/home.html:104
+msgid "Ближайших событий нет."
+msgstr "No upcoming events."
+
+#: templates/catalog/map.html:4 templates/pages/about.html:64
+msgid "Карта округа"
+msgstr "District map"
+
+#: templates/catalog/map.html:8
+msgid "Карта туристических объектов"
+msgstr "Map of attractions"
+
+#: templates/catalog/map.html:9
+msgid ""
+"Нажмите на маркер, чтобы открыть карточку объекта. Категории можно скрывать."
+msgstr "Click a marker to open the place card. Categories can be hidden."
+
+#: templates/catalog/map.html:14
+msgid "Категории"
+msgstr "Categories"
+
+#: templates/catalog/map.html:26
+msgid ""
+"Координаты объектов в учебной базе указаны приблизительно и годятся для "
+"навигации по селу, но не для выхода в точку по GPS."
+msgstr ""
+"Coordinates in this study database are approximate: good enough to find the "
+"village, not to navigate to the exact spot by GPS."
+
+#: templates/catalog/route_detail.html:32
+msgid "Программа"
+msgstr "Itinerary"
+
+#: templates/catalog/route_detail.html:62
+msgid "Маршрут на карте"
+msgstr "Route on the map"
+
+#: templates/catalog/route_detail.html:65
+msgid ""
+"Линия соединяет точки по порядку и показывает логику маршрута, а не реальную"
+" дорогу."
+msgstr ""
+"The line connects the stops in order and shows the logic of the route, not "
+"the actual road."
+
+#: templates/catalog/route_list.html:8
+msgid "Готовые маршруты по округу"
+msgstr "Ready-made routes around the district"
+
+#: templates/catalog/route_list.html:9
+msgid "Собранные последовательности объектов — можно ехать по ним как есть."
+msgstr "Prepared sequences of places — you can follow them as they are."
+
+#: templates/catalog/route_list.html:36
+msgid "Открыть маршрут"
+msgstr "Open the route"
+
+#: templates/catalog/village_detail.html:4
+#: templates/catalog/village_detail.html:12 templates/pages/how_to_get.html:39
+msgid "Сёла округа"
+msgstr "Villages of the district"
+
+#: templates/catalog/village_detail.html:22
+msgid "Объекты села"
+msgstr "Places in this village"
+
+#: templates/catalog/village_detail.html:27
+msgid "Для этого села объекты пока не добавлены."
+msgstr "No places have been added for this village yet."
+
+#: templates/includes/attraction_card.html:24
+msgid "Убрать из избранного"
+msgstr "Remove from favourites"
+
+#: templates/includes/status_chip.html:6
+msgid "Объект не работает"
+msgstr "This place is not operating"
+
+#: templates/includes/status_chip.html:13
+msgid "Объект расположен за границами округа"
+msgstr "The place lies outside the district"
+
+#: templates/includes/status_chip.html:16
+msgid "Название и услуги условные, карточка учебная"
+msgstr "The name and services are placeholders; this is a study card"
+
+#: templates/includes/status_chip.html:16 templates/pages/about.html:39
+msgid "Учебные данные"
+msgstr "Study data"
+
+#: templates/pages/about.html:14
+msgid ""
+"Портал собирает в одном месте туристическое предложение Благовещенского "
+"муниципального округа Амурской области: базы отдыха и гостевые дома в сёлах,"
+" приграничные смотровые точки, памятники казачьей истории, природные места "
+"поймы Амура и Зеи, фермы и пасеки, а также события и готовые маршруты."
+msgstr ""
+"The portal gathers the tourism offer of the Blagoveshchensk municipal "
+"district of the Amur region in one place: recreation centres and guest "
+"houses in the villages, border viewpoints, monuments of Cossack history, "
+"natural sites of the Amur and Zeya floodplain, farms and apiaries, plus "
+"events and ready-made routes."
+
+#: templates/pages/about.html:17
+msgid ""
+"Задача простая: сегодня сведения об объектах разбросаны по справочникам, "
+"областным сайтам и социальным сетям, поэтому гостю трудно за один заход "
+"понять, что в округе вообще есть. Портал даёт каталог с фильтрами, карту, "
+"календарь событий и маршруты — и делает это на трёх языках, включая "
+"китайский, потому что округ примыкает к границе и к мостовому переходу в "
+"Хэйхэ."
+msgstr ""
+"The task is simple: today information about these places is scattered across"
+" directories, regional websites and social networks, so a visitor cannot see"
+" in one go what the district actually offers. The portal provides a "
+"filterable catalogue, a map, an event calendar and routes — in three "
+"languages, Chinese included, because the district adjoins the border and the"
+" bridge crossing to Heihe."
+
+#: templates/pages/about.html:20
+msgid "Что здесь есть"
+msgstr "What you will find here"
+
+#: templates/pages/about.html:22
+msgid "Каталог объектов с фильтрами по категории, селу и сезону"
+msgstr "A catalogue with filters by category, village and season"
+
+#: templates/pages/about.html:23
+msgid "Карта на Leaflet и OpenStreetMap с маркерами по категориям"
+msgstr "A Leaflet and OpenStreetMap map with markers by category"
+
+#: templates/pages/about.html:24
+msgid "Календарь событий с фильтром по месяцу и селу"
+msgstr "An event calendar filtered by month and village"
+
+#: templates/pages/about.html:25
+msgid "Готовые маршруты с последовательностью точек"
+msgstr "Ready-made routes with an ordered list of stops"
+
+#: templates/pages/about.html:26
+msgid "Избранное и отзывы для зарегистрированных пользователей"
+msgstr "Favourites and reviews for registered users"
+
+#: templates/pages/about.html:27
+msgid "Русская, английская и китайская версии интерфейса"
+msgstr "Russian, English and Chinese versions of the interface"
+
+#: templates/pages/about.html:30
+msgid "Как мы обозначаем статусы"
+msgstr "How we mark statuses"
+
+#: templates/pages/about.html:32
+msgid ""
+"Не всё, о чём пишут в интернете, работает на самом деле. Поэтому у каждого "
+"объекта есть статус, и он виден прямо на карточке."
+msgstr ""
+"Not everything written about online is actually open. That is why every "
+"place has a status, shown right on its card."
+
+#: templates/pages/about.html:35
+msgid "Действующий"
+msgstr "Operating"
+
+#: templates/pages/about.html:35
+msgid "объект принимает гостей"
+msgstr "the place welcomes visitors"
+
+#: templates/pages/about.html:36
+msgid "Строится"
+msgstr "Under construction"
+
+#: templates/pages/about.html:36
+msgid "объект ещё не открыт, сроки могут сдвигаться"
+msgstr "not open yet, the schedule may shift"
+
+#: templates/pages/about.html:37
+msgid "Не действует"
+msgstr "Not operating"
+
+#: templates/pages/about.html:37
+msgid "поездку планировать нельзя"
+msgstr "do not plan a trip here"
+
+#: templates/pages/about.html:38
+msgid "объект за границами округа, приведён для контекста"
+msgstr "outside the district, listed for context"
+
+#: templates/pages/about.html:39
+msgid "название и услуги условные"
+msgstr "the name and services are placeholders"
+
+#: templates/pages/about.html:43
+msgid "Дисклеймер."
+msgstr "Disclaimer."
+
+#: templates/pages/about.html:44
+msgid ""
+"Это учебный проект. Пользователи и их данные вымышленные, интеграций с "
+"государственными системами нет, бронирования и оплаты не производятся. "
+"Названия сёл и публичных объектов реальные, часть коммерческих карточек — "
+"условные образцы. Перед практическим использованием сведения нужно сверить с"
+" актуальными источниками."
+msgstr ""
+"This is a student project. Users and their data are fictional, there are no "
+"integrations with government systems, and no bookings or payments are made. "
+"Village names and public sites are real; some commercial cards are "
+"placeholder samples. Before any practical use the information must be "
+"checked against current sources."
+
+#: templates/pages/about.html:51
+msgid "Технологии"
+msgstr "Technology"
+
+#: templates/pages/about.html:60
+msgid "Полезные страницы"
+msgstr "Useful pages"
+
+#: templates/pages/contacts.html:13
+msgid ""
+"Портал разработан как учебный проект по специальности «Информационные "
+"системы и программирование». Контактные данные ниже — демонстрационные."
+msgstr ""
+"The portal was built as a student project for the Information Systems and "
+"Programming programme. The contact details below are for demonstration only."
+
+#: templates/pages/contacts.html:17
+msgid "Территория"
+msgstr "Area"
+
+#: templates/pages/contacts.html:20
+msgid "Владельцам объектов"
+msgstr "For site owners"
+
+#: templates/pages/contacts.html:22
+msgid ""
+"Если карточка вашего объекта содержит неточность или объект нужно добавить, "
+"напишите на указанную почту: контент-менеджер портала внесёт правки через "
+"панель управления."
+msgstr ""
+"If your card contains an error or your site should be added, write to the "
+"address above and the portal's content manager will make the changes in the "
+"admin panel."
+
+#: templates/pages/contacts.html:29
+msgid "Учебный проект"
+msgstr "Student project"
+
+#: templates/pages/contacts.html:31
+msgid ""
+"Персональные данные пользователей вымышленные. Портал не выполняет "
+"бронирований, не принимает платежи и не связан с государственными "
+"информационными системами."
+msgstr ""
+"User personal data is fictional. The portal makes no bookings, accepts no "
+"payments and is not connected to any government information system."
+
+#: templates/pages/how_to_get.html:13
+msgid ""
+"Округ окружает Благовещенск, поэтому дорога почти в любое село занимает от "
+"15 минут до часа. Отправная точка — областной центр."
+msgstr ""
+"The district surrounds Blagoveshchensk, so almost any village is 15 minutes "
+"to an hour away. The regional centre is your starting point."
+
+#: templates/pages/how_to_get.html:16
+msgid "Самолётом"
+msgstr "By air"
+
+#: templates/pages/how_to_get.html:18
+msgid ""
+"Международный аэропорт Игнатьево находится в самом округе, рядом с "
+"одноимённым селом. От аэропорта до Благовещенска — около получаса на "
+"автомобиле."
+msgstr ""
+"Ignatyevo international airport is inside the district, next to the village "
+"of the same name. It is about half an hour by car from the airport to "
+"Blagoveshchensk."
+
+#: templates/pages/how_to_get.html:21
+msgid "Из Китая"
+msgstr "From China"
+
+#: templates/pages/how_to_get.html:23
+msgid ""
+"Через автомобильный мост Благовещенск — Хэйхэ и пункт пропуска «Кани-"
+"Курган», который работает круглосуточно. Пересечение границы возможно только"
+" через пункт пропуска и с оформленными документами."
+msgstr ""
+"Via the Blagoveshchensk–Heihe road bridge and the Kani-Kurgan checkpoint, "
+"which operates around the clock. The border may only be crossed at the "
+"checkpoint and with valid documents."
+
+#: templates/pages/how_to_get.html:26
+msgid "По округу"
+msgstr "Around the district"
+
+#: templates/pages/how_to_get.html:28
+msgid ""
+"До крупных сёл ходят пригородные автобусы от автовокзала Благовещенска. До "
+"баз отдыха, пасек и природных точек удобнее на автомобиле: часть подъездов "
+"грунтовая, после дождя проезд может быть затруднён."
+msgstr ""
+"Suburban buses run to the larger villages from the Blagoveshchensk bus "
+"station. A car is better for recreation centres, apiaries and nature spots: "
+"some access roads are unpaved and can be difficult after rain."
+
+#: templates/pages/how_to_get.html:32
+msgid ""
+"Берег Амура — пограничная зона. Соблюдайте правила пограничного режима и "
+"требования пограничной службы, особенно при съёмке."
+msgstr ""
+"The Amur bank is a border zone. Follow the border regime rules and the "
+"instructions of the border service, especially when taking photographs."
+
+#: templates/pages/how_to_get.html:47
+msgid "Открыть карту"
+msgstr "Open the map"

@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{{ attraction.title_i18n }} — {% translate "Туризм округа" %}{% endblock %}
+{% block description %}{{ attraction.short_description_i18n }}{% endblock %}
+
+{% block content %}
+<div class="detail-header">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb small mb-2">
+        <li class="breadcrumb-item"><a href="{% url 'catalog:home' %}">{% translate "Главная" %}</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'catalog:attraction_list' %}">{% translate "Каталог" %}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ attraction.title_i18n }}</li>
+      </ol>
+    </nav>
+
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
+      <div>
+        <h1 class="h3 mb-2">{{ attraction.title_i18n }}</h1>
+        <div class="d-flex flex-wrap gap-1 align-items-center">
+          <span class="chip">{{ attraction.category.icon }} {{ attraction.category.name_i18n }}</span>
+          {% if attraction.village %}
+            <a href="{{ attraction.village.get_absolute_url }}" class="chip text-decoration-none">📍 {{ attraction.village.name_i18n }}</a>
+          {% endif %}
+          <span class="chip">{{ attraction.get_season_display }}</span>
+          {% include "includes/status_chip.html" with item=attraction %}
+          {% if attraction.rating_avg %}
+            <span class="rating ms-2">★ {{ attraction.rating_avg|floatformat:1 }}<span class="count"> ({{ attraction.rating_count }})</span></span>
+          {% endif %}
+        </div>
+      </div>
+
+      {% if user.is_authenticated %}
+        <form method="post" action="{% url 'catalog:toggle_favorite' attraction.slug %}">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.get_full_path }}">
+          <button type="submit" class="btn {% if is_favorite %}btn-brand{% else %}btn-outline-brand{% endif %}">
+            ♥ {% if is_favorite %}{% translate "В избранном" %}{% else %}{% translate "В избранное" %}{% endif %}
+          </button>
+        </form>
+      {% else %}
+        <a href="{% url 'accounts:login' %}?next={{ request.get_full_path|urlencode }}" class="btn btn-outline-brand">
+          ♥ {% translate "Войдите, чтобы сохранить" %}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="container py-4">
+  <div class="row g-4">
+    <div class="col-lg-8">
+      {% if photos %}
+        <div class="gallery mb-4">
+          {% with first=photos.0 %}
+            <img src="{{ first.image.url }}" alt="{{ first.caption|default:attraction.title_i18n }}" class="main mb-2">
+          {% endwith %}
+          {% if photos|length > 1 %}
+            <div class="row g-2">
+              {% for photo in photos|slice:"1:4" %}
+                <div class="col-4"><img src="{{ photo.image.url }}" alt="{{ photo.caption|default:attraction.title_i18n }}" class="thumb-sm"></div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if attraction.status == 'closed' %}
+        <div class="notice notice-danger mb-4">
+          <strong>{% translate "Объект не действует." %}</strong>
+          {% translate "Не планируйте сюда поездку: карточка оставлена как справка и предупреждение." %}
+        </div>
+      {% elif attraction.status == 'construction' or attraction.status == 'planned' %}
+        <div class="notice mb-4">
+          <strong>{{ attraction.get_status_display }}.</strong>
+          {% translate "Объект ещё не принимает посетителей — сроки могут сдвигаться." %}
+        </div>
+      {% endif %}
+
+      <div class="prose">
+        {{ attraction.description_i18n|linebreaks }}
+      </div>
+
+      {% if attraction.fact_note %}
+        <div class="notice mt-3">{{ attraction.fact_note|linebreaksbr }}</div>
+      {% endif %}
+
+      {% if attraction.tag_list %}
+        <div class="d-flex flex-wrap gap-1 mt-4">
+          {% for tag in attraction.tag_list %}<span class="chip chip-tag">#{{ tag }}</span>{% endfor %}
+        </div>
+      {% endif %}
+
+      <hr class="my-4">
+
+      <h2 class="h5 mb-3">{% translate "Отзывы" %} <span class="text-muted">({{ reviews|length }})</span></h2>
+
+      {% for review in reviews %}
+        <div class="review">
+          <div class="d-flex justify-content-between">
+            <strong>{{ review.user.get_full_name|default:review.user.username }}</strong>
+            <span class="rating">{% for _ in "12345"|make_list %}{% if forloop.counter <= review.rating %}★{% else %}☆{% endif %}{% endfor %}</span>
+          </div>
+          <div class="small text-muted mb-1">{{ review.created_at|date:"d.m.Y" }}</div>
+          <p class="mb-0 small">{{ review.text|linebreaksbr }}</p>
+        </div>
+      {% empty %}
+        <p class="text-muted small">{% translate "Отзывов пока нет. Ваш может стать первым." %}</p>
+      {% endfor %}
+
+      <div class="panel mt-4">
+        {% if not user.is_authenticated %}
+          <p class="mb-0 small">
+            <a href="{% url 'accounts:login' %}?next={{ request.get_full_path|urlencode }}">{% translate "Войдите" %}</a>
+            {% translate "или" %}
+            <a href="{% url 'accounts:register' %}">{% translate "зарегистрируйтесь" %}</a>,
+            {% translate "чтобы оставить отзыв." %}
+          </p>
+        {% elif user_review %}
+          <p class="mb-0 small">
+            {% translate "Вы уже оставили отзыв об этом объекте." %}
+            {% if not user_review.is_approved %}
+              <span class="chip chip-warn ms-1">{% translate "На модерации" %}</span>
+            {% endif %}
+          </p>
+        {% elif form %}
+          <h3 class="h6 mb-3">{% translate "Оставить отзыв" %}</h3>
+          <form method="post">
+            {% csrf_token %}
+            {% if form.non_field_errors %}<div class="alert alert-danger py-2">{{ form.non_field_errors }}</div>{% endif %}
+            <div class="mb-3">
+              <label class="form-label small">{{ form.rating.label }}</label>
+              {{ form.rating }}
+              {% if form.rating.errors %}<div class="text-danger small">{{ form.rating.errors }}</div>{% endif %}
+            </div>
+            <div class="mb-3">
+              <label class="form-label small" for="{{ form.text.id_for_label }}">{{ form.text.label }}</label>
+              {{ form.text }}
+              {% if form.text.errors %}<div class="text-danger small">{{ form.text.errors }}</div>{% endif %}
+            </div>
+            <button type="submit" class="btn btn-brand">{% translate "Отправить" %}</button>
+            <span class="small text-muted ms-2">{% translate "Отзыв появится после проверки модератором." %}</span>
+          </form>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="panel mb-3">
+        <h2 class="h6">{% translate "На карте" %}</h2>
+        <div id="map" class="map-box map-box-sm mt-2"
+             data-lat="{{ attraction.lat|stringformat:'f' }}"
+             data-lng="{{ attraction.lng|stringformat:'f' }}"
+             data-title="{{ attraction.title_i18n }}"
+             data-color="{{ attraction.category.color }}"
+             data-icon="{{ attraction.category.icon }}"></div>
+        {% if attraction.address %}<p class="small text-muted mt-2 mb-0">{{ attraction.address }}</p>{% endif %}
+        <p class="small text-muted mb-0">{{ attraction.lat|floatformat:4 }}, {{ attraction.lng|floatformat:4 }}</p>
+      </div>
+
+      {% if routes %}
+        <div class="panel mb-3">
+          <h2 class="h6">{% translate "Входит в маршруты" %}</h2>
+          <ul class="list-unstyled small mb-0 mt-2">
+            {% for route in routes %}
+              <li class="mb-1">→ <a href="{{ route.get_absolute_url }}">{{ route.title_i18n }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if events %}
+        <div class="panel mb-3">
+          <h2 class="h6">{% translate "События на площадке" %}</h2>
+          <ul class="list-unstyled small mb-0 mt-2">
+            {% for event in events %}
+              <li class="mb-1">{{ event.date_start|date:"d.m.Y" }} — <a href="{{ event.get_absolute_url }}">{{ event.title_i18n }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if nearby %}
+        <div class="panel">
+          <h2 class="h6">{% translate "Рядом" %}</h2>
+          <ul class="list-unstyled small mb-0 mt-2">
+            {% for item in nearby %}
+              <li class="mb-1">{{ item.category.icon }} <a href="{{ item.get_absolute_url }}">{{ item.title_i18n }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/map.js' %}"></script>
+<script>portalMap.single(document.getElementById('map'));</script>
+{% endblock %}

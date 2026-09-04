@@ -1,0 +1,62 @@
+[
+  {
+    "username": "admin",
+    "password": "admin12345",
+    "first_name": "Администратор",
+    "last_name": "Портала",
+    "email": "admin@example.org",
+    "is_staff": true,
+    "is_superuser": true,
+    "role": "Администратор"
+  },
+  {
+    "username": "manager",
+    "password": "manager12345",
+    "first_name": "Ольга",
+    "last_name": "Контентова",
+    "email": "manager@example.org",
+    "is_staff": true,
+    "is_superuser": false,
+    "role": "Контент-менеджер"
+  },
+  {
+    "username": "ivanova",
+    "password": "demo12345",
+    "first_name": "Мария",
+    "last_name": "Иванова",
+    "email": "ivanova@example.org",
+    "is_staff": false,
+    "is_superuser": false,
+    "role": "Зарегистрированный пользователь"
+  },
+  {
+    "username": "petrov",
+    "password": "demo12345",
+    "first_name": "Алексей",
+    "last_name": "Петров",
+    "email": "petrov@example.org",
+    "is_staff": false,
+    "is_superuser": false,
+    "role": "Зарегистрированный пользователь"
+  },
+  {
+    "username": "sidorova",
+    "password": "demo12345",
+    "first_name": "Анна",
+    "last_name": "Сидорова",
+    "email": "sidorova@example.org",
+    "is_staff": false,
+    "is_superuser": false,
+    "role": "Зарегистрированный пользователь"
+  },
+  {
+    "username": "guest_zh",
+    "password": "demo12345",
+    "first_name": "Ли",
+    "last_name": "Вэй",
+    "email": "guest.zh@example.org",
+    "is_staff": false,
+    "is_superuser": false,
+    "role": "Гость из КНР (демонстрация китайской версии)"
+  }
+]

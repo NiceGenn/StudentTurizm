@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+sources/media/
+sources/staticfiles/
+*.log
+
+# Локальные настройки окружения
+.env
+.env.local
+
+# Артефакты сборки релизов
+releases/*.zip
+releases/*.tar.gz
+
+# Редакторы и ОС
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

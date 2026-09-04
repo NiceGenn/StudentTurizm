@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "chigiri",
+    "name": "Чигири",
+    "name_en": "Chigiri",
+    "name_zh": "奇吉里村",
+    "lat": 50.3167,
+    "lng": 127.5333,
+    "description": "Самое быстрорастущее село округа, фактически северный пригород Благовещенска. Отсюда удобнее всего начинать поездку по округу: рядом выезд на трассу и большинство гостевых комплексов с банями.",
+    "description_en": "The fastest-growing village of the district and effectively a northern suburb of Blagoveshchensk. A convenient starting point for a trip around the district.",
+    "description_zh": "全区人口增长最快的村庄，实际上是布拉戈维申斯克的北郊，是环区游览的便利起点。"
+  },
+  {
+    "slug": "verkhneblagoveshchenskoye",
+    "name": "Верхнеблаговещенское",
+    "name_en": "Verkhneblagoveshchenskoye",
+    "name_zh": "上布拉戈维申斯科耶村",
+    "lat": 50.3169,
+    "lng": 127.4308,
+    "description": "Село выше Благовещенска по течению Амура. Место, связанное с началом истории города: в 1856 году казаки основали здесь, в этих местах, Усть-Зейский пост. С берега открывается панорама Амура и китайского Хэйхэ.",
+    "description_en": "A village upstream of Blagoveshchensk on the Amur. Linked to the Cossack history of 1856; the bank offers a panorama of the Amur and Chinese Heihe.",
+    "description_zh": "位于布拉戈维申斯克上游的村庄，与1856年哥萨克开拓史相关，河岸可眺望阿穆尔河与中国黑河。"
+  },
+  {
+    "slug": "kanikurgan",
+    "name": "Каникурган",
+    "name_en": "Kanikurgan",
+    "name_zh": "卡尼库尔干村",
+    "lat": 50.2072,
+    "lng": 127.6560,
+    "description": "Приграничная площадка округа: здесь расположены автомобильный мост Благовещенск — Хэйхэ, пункт пропуска и таможенно-логистический терминал. Главные «ворота» въездного турпотока из КНР.",
+    "description_en": "The border hub of the district: the Blagoveshchensk–Heihe road bridge, the checkpoint and the customs and logistics terminal.",
+    "description_zh": "全区的边境枢纽：布拉戈维申斯克—黑河公路大桥、口岸及海关物流园区所在地。"
+  },
+  {
+    "slug": "natalyino",
+    "name": "Натальино",
+    "name_en": "Natalyino",
+    "name_zh": "纳塔利伊诺村",
+    "lat": 50.4472,
+    "lng": 127.6833,
+    "description": "Историческое село на берегу Зеи, основано в 1886 году. Сегодня — это прежде всего круглогодичный отдых на воде: базы, бани, рыбалка.",
+    "description_en": "A historic village on the Zeya river bank, founded in 1886. Today it is mostly about year-round riverside recreation.",
+    "description_zh": "结雅河畔的历史村庄，建于1886年，如今以全年河畔休闲为主。"
+  },
+  {
+    "slug": "ignatyevo",
+    "name": "Игнатьево",
+    "name_en": "Ignatyevo",
+    "name_zh": "伊格纳季耶沃村",
+    "lat": 50.4283,
+    "lng": 127.4083,
+    "description": "Село рядом с международным аэропортом Игнатьево — первая точка округа, которую видят прилетающие гости области.",
+    "description_en": "A village next to Ignatyevo international airport — the first spot of the district that arriving guests see.",
+    "description_zh": "毗邻伊格纳季耶沃国际机场的村庄，是抵达旅客看到的全区第一站。"
+  },
+  {
+    "slug": "vladimirovka",
+    "name": "Владимировка",
+    "name_en": "Vladimirovka",
+    "name_zh": "弗拉基米罗夫卡村",
+    "lat": 50.3639,
+    "lng": 127.6250,
+    "description": "Село у Владимировских озёр — популярное у горожан место семейного отдыха и коротких выездов на воду.",
+    "description_en": "A village by the Vladimirovka lakes, popular with city families for short getaways.",
+    "description_zh": "位于弗拉基米罗夫卡湖畔的村庄，是市民家庭短途休闲的热门地点。"
+  },
+  {
+    "slug": "ust-ivanovka",
+    "name": "Усть-Ивановка",
+    "name_en": "Ust-Ivanovka",
+    "name_zh": "乌斯季伊万诺夫卡村",
+    "lat": 50.4139,
+    "lng": 127.5972,
+    "description": "Село в устье реки Ивановка на левом берегу Зеи. Летом — пляжные и рыболовные места на Зее.",
+    "description_en": "A village at the mouth of the Ivanovka river on the left bank of the Zeya; beaches and fishing spots in summer.",
+    "description_zh": "位于伊万诺夫卡河口、结雅河左岸的村庄，夏季有沙滩与垂钓点。"
+  },
+  {
+    "slug": "markovo",
+    "name": "Марково",
+    "name_en": "Markovo",
+    "name_zh": "马尔科沃村",
+    "lat": 50.1806,
+    "lng": 127.7333,
+    "description": "Село на юге округа, недалеко от приграничной полосы. Тихий сельский отдых и агротуризм.",
+    "description_en": "A village in the south of the district, near the border strip. Quiet rural stays and agritourism.",
+    "description_zh": "位于全区南部、靠近边境地带的村庄，适合安静的乡村休闲与农业游。"
+  },
+  {
+    "slug": "sergeyevka",
+    "name": "Сергеевка",
+    "name_en": "Sergeyevka",
+    "name_zh": "谢尔盖耶夫卡村",
+    "lat": 50.4500,
+    "lng": 127.4000,
+    "description": "Село на северо-западе округа, среди полей и перелесков. База для агротуров и наблюдения за птицами в пойме.",
+    "description_en": "A village in the north-west of the district among fields and groves; a base for agritours and birdwatching.",
+    "description_zh": "位于全区西北部田野与林间的村庄，是农业游和观鸟的基地。"
+  }
+]

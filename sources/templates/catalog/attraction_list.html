@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Каталог объектов" %} — {% translate "Туризм округа" %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <h1 class="section-title">{% translate "Каталог туристических объектов" %}</h1>
+  <p class="section-sub">{% blocktranslate %}Фильтруйте по категории, селу и сезону — или ищите по названию и тегам.{% endblocktranslate %}</p>
+
+  <form method="get" class="panel mb-4">
+    <div class="row g-2 align-items-end">
+      <div class="col-12 col-lg-4">
+        <label class="form-label small mb-1" for="{{ form.q.id_for_label }}">{{ form.q.label }}</label>
+        {{ form.q }}
+      </div>
+      <div class="col-6 col-lg-2">
+        <label class="form-label small mb-1" for="{{ form.category.id_for_label }}">{{ form.category.label }}</label>
+        {{ form.category }}
+      </div>
+      <div class="col-6 col-lg-2">
+        <label class="form-label small mb-1" for="{{ form.village.id_for_label }}">{{ form.village.label }}</label>
+        {{ form.village }}
+      </div>
+      <div class="col-6 col-lg-2">
+        <label class="form-label small mb-1" for="{{ form.season.id_for_label }}">{{ form.season.label }}</label>
+        {{ form.season }}
+      </div>
+      <div class="col-6 col-lg-2">
+        <label class="form-label small mb-1" for="{{ form.sort.id_for_label }}">{{ form.sort.label }}</label>
+        {{ form.sort }}
+      </div>
+    </div>
+    <div class="d-flex gap-2 mt-3">
+      <button type="submit" class="btn btn-brand px-4">{% translate "Показать" %}</button>
+      {% if has_filters %}
+        <a href="{% url 'catalog:attraction_list' %}" class="btn btn-link">{% translate "Сбросить" %}</a>
+      {% endif %}
+      <a href="{% url 'catalog:map' %}" class="btn btn-outline-brand ms-auto">{% translate "На карте" %}</a>
+    </div>
+  </form>
+
+  <p class="text-muted small">{% blocktranslate count counter=total %}Найден {{ counter }} объект{% plural %}Найдено объектов: {{ counter }}{% endblocktranslate %}</p>
+
+  <div class="row g-3">
+    {% for item in page_obj %}
+      <div class="col-md-6 col-lg-4">{% include "includes/attraction_card.html" with item=item %}</div>
+    {% empty %}
+      <div class="col-12">
+        <div class="panel text-center text-muted py-5">
+          {% translate "По вашему запросу ничего не найдено. Попробуйте изменить фильтры." %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if page_obj.paginator.num_pages > 1 %}
+    <nav class="mt-4" aria-label="{% translate 'Страницы каталога' %}">
+      <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+          <li class="page-item"><a class="page-link" href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ page_obj.previous_page_number }}">‹</a></li>
+        {% endif %}
+        {% for number in page_obj.paginator.page_range %}
+          <li class="page-item {% if number == page_obj.number %}active{% endif %}">
+            <a class="page-link" href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ number }}">{{ number }}</a>
+          </li>
+        {% endfor %}
+        {% if page_obj.has_next %}
+          <li class="page-item"><a class="page-link" href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ page_obj.next_page_number }}">›</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  {% endif %}
+
+  {% if outside %}
+    <section class="mt-5">
+      <h2 class="section-title h5">{% translate "Рядом с округом" %}</h2>
+      <p class="section-sub">{% blocktranslate %}Объекты регионального контекста: они находятся за границами округа и в его маршруты не включаются.{% endblocktranslate %}</p>
+      <div class="row g-3">
+        {% for item in outside %}
+          <div class="col-md-6 col-lg-4">{% include "includes/attraction_card.html" with item=item %}</div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+</div>
+{% endblock %}

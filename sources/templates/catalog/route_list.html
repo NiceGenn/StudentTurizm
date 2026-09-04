@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Маршруты" %} — {% translate "Туризм округа" %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <h1 class="section-title">{% translate "Готовые маршруты по округу" %}</h1>
+  <p class="section-sub">{% translate "Собранные последовательности объектов — можно ехать по ним как есть." %}</p>
+
+  <form method="get" class="mb-4 d-flex flex-wrap gap-2 align-items-center">
+    <span class="small text-muted">{% translate "Сезон" %}:</span>
+    <a href="{% url 'catalog:route_list' %}" class="chip text-decoration-none {% if not selected_season %}fw-bold{% endif %}">{% translate "Все" %}</a>
+    {% for value, label in seasons %}
+      <a href="?season={{ value }}" class="chip text-decoration-none {% if selected_season == value %}fw-bold{% endif %}">{{ label }}</a>
+    {% endfor %}
+  </form>
+
+  <div class="row g-3">
+    {% for route in routes %}
+      <div class="col-lg-6">
+        <div class="panel h-100">
+          <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
+            <h2 class="h5 mb-0"><a href="{{ route.get_absolute_url }}" class="text-decoration-none">{{ route.title_i18n }}</a></h2>
+            <span class="chip">{{ route.duration_i18n }}</span>
+          </div>
+          <div class="small text-muted mb-2">
+            {{ route.get_season_display }} · {{ route.get_difficulty_display }} · {{ route.points_total }} {% translate "точек" %}
+          </div>
+          <p class="small">{{ route.description_i18n|truncatewords:34 }}</p>
+          <ol class="small text-muted ps-3 mb-3">
+            {% for point in route.points.all %}
+              <li>{{ point.attraction.title_i18n }}</li>
+            {% endfor %}
+          </ol>
+          <a href="{{ route.get_absolute_url }}" class="btn btn-sm btn-outline-brand">{% translate "Открыть маршрут" %}</a>
+        </div>
+      </div>
+    {% empty %}
+      <div class="col-12"><div class="panel text-muted">{% translate "Маршруты пока не добавлены." %}</div></div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ village.name_i18n }} — {% translate "Сёла округа" %}{% endblock %}
+
+{% block content %}
+<div class="detail-header">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb small mb-2">
+        <li class="breadcrumb-item"><a href="{% url 'catalog:home' %}">{% translate "Главная" %}</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'catalog:how_to_get' %}">{% translate "Сёла округа" %}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ village.name_i18n }}</li>
+      </ol>
+    </nav>
+    <h1 class="h3 mb-2">{{ village.name_i18n }}</h1>
+    <p class="mb-0 text-muted">{{ village.description_i18n }}</p>
+  </div>
+</div>
+
+<div class="container py-4">
+  <h2 class="section-title h5">{% translate "Объекты села" %}</h2>
+  <div class="row g-3 mb-4">
+    {% for item in attractions %}
+      <div class="col-md-6 col-lg-4">{% include "includes/attraction_card.html" with item=item %}</div>
+    {% empty %}
+      <div class="col-12"><div class="panel text-muted">{% translate "Для этого села объекты пока не добавлены." %}</div></div>
+    {% endfor %}
+  </div>
+
+  {% if events %}
+    <h2 class="section-title h5">{% translate "Ближайшие события" %}</h2>
+    <ul class="list-unstyled">
+      {% for event in events %}
+        <li class="mb-2">
+          <span class="chip">{{ event.date_start|date:"d.m.Y" }}</span>
+          <a href="{{ event.get_absolute_url }}" class="ms-2">{{ event.title_i18n }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+{% endblock %}

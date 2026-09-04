@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Регистрация" %} — {% translate "Туризм округа" %}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="panel">
+        <h1 class="h4 mb-1">{% translate "Регистрация" %}</h1>
+        <p class="small text-muted">
+          {% blocktranslate %}Аккаунт нужен, чтобы сохранять объекты в избранное и оставлять отзывы.{% endblocktranslate %}
+        </p>
+
+        <form method="post" novalidate>
+          {% csrf_token %}
+          {% if form.non_field_errors %}
+            <div class="alert alert-danger py-2 small">{{ form.non_field_errors }}</div>
+          {% endif %}
+          {% for field in form %}
+            <div class="mb-3">
+              <label class="form-label small" for="{{ field.id_for_label }}">{{ field.label }}</label>
+              {{ field }}
+              {% if field.help_text %}<div class="form-text small">{{ field.help_text|safe }}</div>{% endif %}
+              {% if field.errors %}<div class="text-danger small">{{ field.errors }}</div>{% endif %}
+            </div>
+          {% endfor %}
+          <button type="submit" class="btn btn-brand w-100">{% translate "Зарегистрироваться" %}</button>
+        </form>
+
+        <p class="small text-muted mt-3 mb-0">
+          {% blocktranslate %}Учебный проект: не вводите настоящие персональные данные.{% endblocktranslate %}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

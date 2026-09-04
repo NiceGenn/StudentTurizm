@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Профиль" %} — {% translate "Туризм округа" %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <h1 class="section-title">{% translate "Личный кабинет" %}</h1>
+  <p class="section-sub">{{ user.get_full_name|default:user.username }}</p>
+
+  <div class="row g-4">
+    <div class="col-lg-6">
+      <div class="panel">
+        <h2 class="h6 mb-3">{% translate "Данные профиля" %}</h2>
+        <form method="post">
+          {% csrf_token %}
+          {% for field in form %}
+            <div class="mb-3">
+              <label class="form-label small" for="{{ field.id_for_label }}">{{ field.label }}</label>
+              {{ field }}
+              {% if field.errors %}<div class="text-danger small">{{ field.errors }}</div>{% endif %}
+            </div>
+          {% endfor %}
+          <button type="submit" class="btn btn-brand">{% translate "Сохранить" %}</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="panel mb-3">
+        <h2 class="h6 mb-2">{% translate "Избранное" %}</h2>
+        <p class="small mb-2">{% translate "Сохранённых объектов" %}: <strong>{{ favorites_count }}</strong></p>
+        <a href="{% url 'accounts:favorites' %}" class="btn btn-sm btn-outline-brand">{% translate "Открыть список" %}</a>
+      </div>
+
+      <div class="panel">
+        <h2 class="h6 mb-2">{% translate "Мои отзывы" %}</h2>
+        {% for review in reviews %}
+          <div class="review">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <a href="{{ review.attraction.get_absolute_url }}" class="small">{{ review.attraction.title_i18n }}</a>
+              <span class="rating small">★ {{ review.rating }}</span>
+            </div>
+            <div class="small text-muted">
+              {{ review.created_at|date:"d.m.Y" }} ·
+              {% if review.is_approved %}
+                <span class="chip">{% translate "опубликован" %}</span>
+              {% else %}
+                <span class="chip chip-warn">{% translate "на модерации" %}</span>
+              {% endif %}
+            </div>
+          </div>
+        {% empty %}
+          <p class="small text-muted mb-0">{% translate "Вы ещё не оставляли отзывов." %}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

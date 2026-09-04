@@ -1,0 +1,99 @@
+[
+  {
+    "slug": "prigranichnyy-uikend",
+    "title": "Приграничный маршрут выходного дня",
+    "title_en": "Border weekend route",
+    "title_zh": "边境周末线路",
+    "duration": "2 дня",
+    "duration_en": "2 days",
+    "duration_zh": "2天",
+    "season": "all_year",
+    "difficulty": "easy",
+    "description": "Маршрут о том, чем округ отличается от остальной области, — о границе. За два дня вы увидите мост Благовещенск — Хэйхэ со смотровых точек Каникургана, поднимитесь на берег Амура у Верхнеблаговещенского, где река одновременно граница, и закончите банным вечером в Чигирях.\n\nЛогистика простая: все точки лежат в пределах 40 километров от Благовещенска, между ними — асфальт.",
+    "description_en": "A route about what makes the district different — the border. Over two days you see the Blagoveshchensk–Heihe bridge from the Kanikurgan viewpoints, walk the Amur bank at Verkhneblagoveshchenskoye and finish with a banya evening in Chigiri. All points lie within 40 km of Blagoveshchensk.",
+    "description_zh": "围绕本区特色——边境展开的线路：两天内从卡尼库尔干观景点远眺布拉戈维申斯克—黑河大桥、漫步上布拉戈维申斯科耶的阿穆尔河岸，并以奇吉里的桑拿之夜收尾。各点均在距市区40公里内。",
+    "points": [
+      {"attraction": "most-blagoveshchensk-heihe", "note": "Смотровая точка на мостовой переход, 30–40 минут."},
+      {"attraction": "punkt-propuska-kanikurgan", "note": "Обзорно, с дороги: как устроен пункт пропуска."},
+      {"attraction": "smotrovaya-na-amur", "note": "Панорама Амура и Хэйхэ, лучше на закате."},
+      {"attraction": "pamyatnik-kazakam", "note": "С чего начинался Благовещенск: 26 казаков, 1856 год."},
+      {"attraction": "gostevye-doma-chigiri", "note": "Ночёвка и баня."}
+    ]
+  },
+  {
+    "slug": "kazachi-sela",
+    "title": "Казачьи сёла Приамурья",
+    "title_en": "Cossack villages of the Amur region",
+    "title_zh": "阿穆尔的哥萨克村庄",
+    "duration": "1 день",
+    "duration_en": "1 day",
+    "duration_zh": "1天",
+    "season": "summer",
+    "difficulty": "easy",
+    "description": "Однодневный историко-краеведческий маршрут об освоении Приамурья. Начало — у памятника казакам-первопоселенцам в Верхнеблаговещенском, дальше площадка казачьей реконструкции, финал — прогулка по старому селу Натальино на Зее.\n\nМаршрут сильнее всего работает в дни событий: сверьтесь с календарём портала, чтобы попасть на реконструкцию, а не на пустую площадку.",
+    "description_en": "A one-day local-history route about the settlement of the Amur region: the monument to the first Cossack settlers in Verkhneblagoveshchenskoye, the re-enactment ground, and a walk through the old village of Natalyino. Check the event calendar so the ground is not empty when you arrive.",
+    "description_zh": "关于阿穆尔开拓史的一日人文线路：上布拉戈维申斯科耶的哥萨克拓荒者纪念碑、历史重演场地，以及结雅河畔老村纳塔利伊诺的漫步。建议对照活动日历，以免场地空置。",
+    "points": [
+      {"attraction": "pamyatnik-kazakam", "note": "Старт маршрута, короткая историческая справка."},
+      {"attraction": "ploschadka-kazachiey-rekonstrukcii", "note": "В дни фестивалей — интерактивная программа."},
+      {"attraction": "selo-natalyino", "note": "Прогулка по селу 1886 года и берегу Зеи."}
+    ]
+  },
+  {
+    "slug": "agrotur-po-fermam",
+    "title": "Агротур по фермам округа",
+    "title_en": "Agritour around the district farms",
+    "title_zh": "全区农场之旅",
+    "duration": "1 день",
+    "duration_en": "1 day",
+    "duration_zh": "1天",
+    "season": "summer",
+    "difficulty": "easy",
+    "description": "Маршрут о том, чем округ живёт каждый день. Утро — на пасеке в Марково с дегустацией мёда, день — в фермерском хозяйстве Сергеевки среди соевых полей, вечер — ночёвка в гостевой усадьбе рядом с аэропортом.\n\nХорошо заходит школьным группам и семьям: везде можно не только смотреть, но и пробовать.",
+    "description_en": "A route about the district's everyday life: a morning at the Markovo apiary with a honey tasting, a day at a Sergeyevka farm among the soybean fields, and a night at a guest estate near the airport. Works well for school groups and families.",
+    "description_zh": "展现本区日常生活的线路：上午在马尔科沃养蜂场品蜜，白天在谢尔盖耶夫卡的农场与大豆田，傍晚入住机场附近的乡村庄园，适合学生团体与家庭。",
+    "points": [
+      {"attraction": "paseka-amurskiy-med", "note": "Экскурсия и дегустация, 1,5–2 часа."},
+      {"attraction": "fermerskoe-hozyaystvo-soya", "note": "Хозяйство, техника, соевые поля."},
+      {"attraction": "gostevaya-usadba-ignatyevo", "note": "Ночёвка, баня."}
+    ]
+  },
+  {
+    "slug": "priroda-poymy",
+    "title": "Природа поймы: птицы и река",
+    "title_en": "Floodplain nature: birds and the river",
+    "title_zh": "河漫滩自然：飞鸟与河流",
+    "duration": "2 дня",
+    "duration_en": "2 days",
+    "duration_zh": "2天",
+    "season": "spring_autumn",
+    "difficulty": "medium",
+    "description": "Природный маршрут по пойме Зеи. Рассвет на точке наблюдения за птицами под Сергеевкой — журавли и дальневосточный аист на пролёте; день на берегу в Усть-Ивановке; ночёвка на базе «Радуга» в Натальино.\n\nНужны бинокль, неяркая одежда и обувь для сырого луга. Лучшее время — конец августа и сентябрь.",
+    "description_en": "A nature route across the Zeya floodplain: dawn at the birdwatching point near Sergeyevka during the migration of cranes and Oriental storks, a day on the bank at Ust-Ivanovka and a night at the Raduga centre in Natalyino. Best in late August and September.",
+    "description_zh": "结雅河漫滩自然线路：在谢尔盖耶夫卡附近的观鸟点迎接日出、观察迁徙的鹤与东方白鹳，白天在乌斯季伊万诺夫卡河岸，夜宿纳塔利伊诺的“彩虹”基地。8月末至9月最佳。",
+    "points": [
+      {"attraction": "birdwatching-poima-zei", "note": "Рассвет, наблюдение с дистанции."},
+      {"attraction": "plyazh-ust-ivanovka", "note": "Берег Зеи, отдых и обед."},
+      {"attraction": "baza-otdyha-raduga", "note": "Ночёвка, рыбалка."}
+    ]
+  },
+  {
+    "slug": "zimniy-uikend",
+    "title": "Зимний уик-энд в округе",
+    "title_en": "Winter weekend in the district",
+    "title_zh": "全区冬季周末",
+    "duration": "2 дня",
+    "duration_en": "2 days",
+    "duration_zh": "2天",
+    "season": "winter",
+    "difficulty": "easy",
+    "description": "Зимний формат округа — это не горные лыжи, а баня, чан под открытым небом и лёд. Первый день: гостевые дома в Чигирях с банями и купелью. Второй: переезд в Натальино на базу «Радуга» — зимние забавы на берегу и рыбалка на льду Зеи.\n\nВажно: горнолыжной базы в Натальино не существует как действующего объекта — строительство заморожено, подъёмник вывезен. Не планируйте катание.",
+    "description_en": "Winter here means banyas, an open-air hot tub and ice rather than downhill skiing. Day one: guest houses in Chigiri; day two: the Raduga centre in Natalyino with winter games on the bank and ice fishing on the Zeya. Note that there is no working ski base in Natalyino — construction is frozen and the lift has been removed.",
+    "description_zh": "本区的冬季主打桑拿、露天热浴桶与冰上活动，而非高山滑雪。第一天入住奇吉里民宿，第二天前往纳塔利伊诺“彩虹”基地体验冬季游乐与结雅河冰钓。请注意：纳塔利伊诺没有运营中的滑雪场，工程已停工、索道被拆走。",
+    "points": [
+      {"attraction": "gostevye-doma-chigiri", "note": "Баня на дровах, чан, купель."},
+      {"attraction": "baza-otdyha-raduga", "note": "Зимние забавы, рыбалка на льду."},
+      {"attraction": "selo-natalyino", "note": "Короткая прогулка по селу и берегу."}
+    ]
+  }
+]

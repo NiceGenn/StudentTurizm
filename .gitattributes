@@ -1,0 +1,16 @@
+# Единый перевод строк в репозитории
+* text=auto eol=lf
+
+*.py    text diff=python
+*.html  text diff=html
+*.css   text
+*.js    text
+*.json  text
+*.md    text
+*.po    text
+*.mo    binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.zip   binary
