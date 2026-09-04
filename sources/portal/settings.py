@@ -69,6 +69,21 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+# WhiteNoise раздаёт статику на хостинге, где нет отдельного веб-сервера.
+# Подключается, только если пакет установлен, — локальной разработке он не нужен.
+try:
+    import whitenoise  # noqa: F401
+except ImportError:
+    pass
+else:
+    MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
+    STORAGES = {
+        "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+        # Без манифеста: манифестное хранилище требует collectstatic перед
+        # любым запуском, включая тесты, и ломает их на чистой машине.
+        "staticfiles": {"BACKEND": "whitenoise.storage.CompressedStaticFilesStorage"},
+    }
+
 ROOT_URLCONF = "portal.urls"
 
 TEMPLATES = [

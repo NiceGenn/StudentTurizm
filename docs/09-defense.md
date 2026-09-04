@@ -148,3 +148,4 @@ Leaflet с тайлами OpenStreetMap не требует ключа, реги
 | Руководство пользователя | [06-user-guide.md](06-user-guide.md) |
 | Руководство администратора | [07-admin-guide.md](07-admin-guide.md) |
 | Фактическая справка | [08-facts.md](08-facts.md) |
+| Публикация в интернете | [10-deploy.md](10-deploy.md) |

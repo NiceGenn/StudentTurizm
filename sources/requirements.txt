@@ -5,3 +5,7 @@ Pillow>=10.0            # обработка изображений (ImageField,
 # Драйвер PostgreSQL — нужен, только если DB_ENGINE=postgres.
 # По умолчанию проект работает на SQLite и эта строка не требуется.
 psycopg[binary]>=3.1 ; sys_platform != "win32"
+
+# Раздача статики на хостинге, где нет nginx (PythonAnywhere, Render и т. п.).
+# Локально не обязателен: без него проект работает через runserver.
+whitenoise>=6.6 ; python_version >= "3.9"

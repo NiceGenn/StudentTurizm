@@ -5,11 +5,29 @@
   "use strict";
 
   var TILES = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-  var ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+  var CREDIT =
+    '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>';
+
+  /** Указание авторства выносится под карту.
+
+      Плашка Leaflet поверх карты закрывает объекты, но совсем убрать
+      указание нельзя: данные OpenStreetMap распространяются по лицензии
+      ODbL, которая требует ссылки на источник. Поэтому плашка отключена,
+      а строчка с источником добавляется под контейнером карты. */
+  function addCredit(element) {
+    if (element.nextElementSibling && element.nextElementSibling.classList.contains("map-credit")) {
+      return;
+    }
+    var credit = document.createElement("p");
+    credit.className = "map-credit";
+    credit.innerHTML = CREDIT;
+    element.parentNode.insertBefore(credit, element.nextSibling);
+  }
 
   function baseMap(element, center, zoom) {
-    var map = L.map(element).setView(center, zoom);
-    L.tileLayer(TILES, { maxZoom: 18, attribution: ATTRIBUTION }).addTo(map);
+    var map = L.map(element, { attributionControl: false }).setView(center, zoom);
+    L.tileLayer(TILES, { maxZoom: 18 }).addTo(map);
+    addCredit(element);
     return map;
   }
 

@@ -141,6 +141,15 @@ a:hover { color: var(--accent); }
   z-index: 0;
 }
 .map-box-sm { height: 320px; }
+.map-credit {
+  font-size: .72rem;
+  color: var(--muted);
+  margin: .35rem 0 0;
+  text-align: right;
+}
+.map-credit a { color: var(--muted); text-decoration: none; }
+.map-credit a:hover { text-decoration: underline; }
+
 .leaflet-popup-content { margin: .7rem .9rem; font-size: .88rem; }
 .leaflet-popup-content .popup-title { font-weight: 600; display: block; margin-bottom: .2rem; }
 .map-pin {
